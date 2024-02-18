@@ -1,0 +1,1062 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Arabic" xml:space="preserve">
+    <value>Ar-SA</value>
+  </data>
+  <data name="btnNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="btnSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>En-US</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="btnReset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Company Name</value>
+  </data>
+  <data name="CreateDate" xml:space="preserve">
+    <value>Create Date</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="IsEnabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="OwnerName" xml:space="preserve">
+    <value>Owner Name</value>
+  </data>
+  <data name="Phone1" xml:space="preserve">
+    <value>Phone 1</value>
+  </data>
+  <data name="Remark" xml:space="preserve">
+    <value>Remark</value>
+  </data>
+  <data name="UniqueId" xml:space="preserve">
+    <value>Unique Id</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="btnClose" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnSaveAndNew" xml:space="preserve">
+    <value>Save &amp; New</value>
+  </data>
+  <data name="btnUpdate" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="cvCompanyName" xml:space="preserve">
+    <value>Please enter Company Name</value>
+  </data>
+  <data name="cvImageName" xml:space="preserve">
+    <value>Please select an image.</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="ContactFromTime" xml:space="preserve">
+    <value>Contact From Time</value>
+  </data>
+  <data name="ContactPersonEmail" xml:space="preserve">
+    <value>Contact Person Email</value>
+  </data>
+  <data name="ContactPersonName" xml:space="preserve">
+    <value>Contact Person Name</value>
+  </data>
+  <data name="ContactPersonPhone" xml:space="preserve">
+    <value>Contact Person Phone</value>
+  </data>
+  <data name="ContactToTime" xml:space="preserve">
+    <value>Contact To Time</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="Email1" xml:space="preserve">
+    <value>Email 1</value>
+  </data>
+  <data name="Email2" xml:space="preserve">
+    <value>Email 1</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="FormHeader" xml:space="preserve">
+    <value>Bank Details</value>
+  </data>
+  <data name="ContactAnyTime" xml:space="preserve">
+    <value>Contact Any Time</value>
+  </data>
+  <data name="IsInternetConnection" xml:space="preserve">
+    <value>Has Internet Connection</value>
+  </data>
+  <data name="NoRecordMessage" xml:space="preserve">
+    <value>No Records Found.</value>
+  </data>
+  <data name="OwnerEmail" xml:space="preserve">
+    <value>Owner Email</value>
+  </data>
+  <data name="OwnerPhone" xml:space="preserve">
+    <value>Owner Phone</value>
+  </data>
+  <data name="Phone2" xml:space="preserve">
+    <value>Phone 2</value>
+  </data>
+  <data name="SendEmail" xml:space="preserve">
+    <value>Send Email</value>
+  </data>
+  <data name="SendSms" xml:space="preserve">
+    <value>Send Sms</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="State1" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>Zip Code</value>
+  </data>
+  <data name="EmailRev" xml:space="preserve">
+    <value>Enter valid email</value>
+  </data>
+  <data name="Email1Rev" xml:space="preserve">
+    <value>Enter valid email 1</value>
+  </data>
+  <data name="Email2Rev" xml:space="preserve">
+    <value>Enter valid email 1</value>
+  </data>
+  <data name="OwnerEmailRev" xml:space="preserve">
+    <value>Please enter Owner Email</value>
+  </data>
+  <data name="BankName" xml:space="preserve">
+    <value>Bank Name</value>
+  </data>
+  <data name="CompanyDetails" xml:space="preserve">
+    <value>Company Details</value>
+  </data>
+  <data name="ContactNo" xml:space="preserve">
+    <value>Contact No</value>
+  </data>
+  <data name="LogoImageName" xml:space="preserve">
+    <value>Logo Image</value>
+  </data>
+  <data name="CompanyPageTitle" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="CompanyFormTitle" xml:space="preserve">
+    <value>Company Details</value>
+  </data>
+  <data name="PaymentTypeFormTitle" xml:space="preserve">
+    <value>Payment Details</value>
+  </data>
+  <data name="PaymentTypePageTitle" xml:space="preserve">
+    <value>Payment</value>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>Payment Type</value>
+  </data>
+  <data name="BankFormTitle" xml:space="preserve">
+    <value>Bank Details</value>
+  </data>
+  <data name="BankPageTitle" xml:space="preserve">
+    <value>Banks</value>
+  </data>
+  <data name="ChangePasswordPageTitle" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Old Password</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="ConfirmPasswordCv" xml:space="preserve">
+    <value>Please enter valid Confirm Password</value>
+  </data>
+  <data name="RolePageTitle" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="RoleFormTitle" xml:space="preserve">
+    <value>Role Details</value>
+  </data>
+  <data name="UserPageTitle" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="LastLoginDateTime" xml:space="preserve">
+    <value>Last Login Date Time</value>
+  </data>
+  <data name="UserFormTitle" xml:space="preserve">
+    <value>User Details</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="btnShowPassword" xml:space="preserve">
+    <value>Show Password</value>
+  </data>
+  <data name="btnHidePassword" xml:space="preserve">
+    <value>Hide Password</value>
+  </data>
+  <data name="RoleRightsPageTitle" xml:space="preserve">
+    <value>Role Rights</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="UserlogPageTitle" xml:space="preserve">
+    <value>UserLog</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="SessionId" xml:space="preserve">
+    <value>SessionId</value>
+  </data>
+  <data name="LastLogoutDateTime" xml:space="preserve">
+    <value>Last Logout DateTime</value>
+  </data>
+  <data name="Os" xml:space="preserve">
+    <value>Os</value>
+  </data>
+  <data name="IpAddress" xml:space="preserve">
+    <value>Ip Address</value>
+  </data>
+  <data name="DeviceName" xml:space="preserve">
+    <value>Device Name</value>
+  </data>
+  <data name="Browser" xml:space="preserve">
+    <value>Browser</value>
+  </data>
+  <data name="CallingPageTitle" xml:space="preserve">
+    <value>Calling</value>
+  </data>
+  <data name="CallingDate" xml:space="preserve">
+    <value>Calling Date</value>
+  </data>
+  <data name="CallingName" xml:space="preserve">
+    <value>Calling Name</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="CallingFormTitle" xml:space="preserve">
+    <value>Calling Details</value>
+  </data>
+  <data name="linktoCustomerMasterId" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="InstallmentStatusPageTitle" xml:space="preserve">
+    <value>Installment Status</value>
+  </data>
+  <data name="InstallmentStatus" xml:space="preserve">
+    <value>Installment Status</value>
+  </data>
+  <data name="InstallmentStatusFormTitle" xml:space="preserve">
+    <value>Installment Status Details</value>
+  </data>
+  <data name="CustomerPageTitle" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Customer Name</value>
+  </data>
+  <data name="IdNo" xml:space="preserve">
+    <value>Id No</value>
+  </data>
+  <data name="PhotoIdImageName" xml:space="preserve">
+    <value>PhotoId Image</value>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>Address 1</value>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>Address 2</value>
+  </data>
+  <data name="Mobile1" xml:space="preserve">
+    <value>Mobile 1</value>
+  </data>
+  <data name="Mobile2" xml:space="preserve">
+    <value>Mobile 2</value>
+  </data>
+  <data name="Fax1" xml:space="preserve">
+    <value>Fax 1</value>
+  </data>
+  <data name="Fax2" xml:space="preserve">
+    <value>Fax 2</value>
+  </data>
+  <data name="CustomerFormTitle" xml:space="preserve">
+    <value>Customer Details</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>Loan - ArrayBit</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="btnLogin" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="ProjectLogin" xml:space="preserve">
+    <value>LOAN - Login</value>
+  </data>
+  <data name="ProjectNameSmall" xml:space="preserve">
+    <value>LOAN</value>
+  </data>
+  <data name="SalesPageTitle" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="ContractMaster" xml:space="preserve">
+    <value>Contract Master</value>
+  </data>
+  <data name="SalesDate" xml:space="preserve">
+    <value>Sales Date</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="SalesRate" xml:space="preserve">
+    <value>Sales Rate</value>
+  </data>
+  <data name="PurchasePageTitle" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="PurchaseDate" xml:space="preserve">
+    <value>Purchase Date</value>
+  </data>
+  <data name="PurchaseRate" xml:space="preserve">
+    <value>Purchase Rate</value>
+  </data>
+  <data name="PurchaseFormTitle" xml:space="preserve">
+    <value>Purchase Details</value>
+  </data>
+  <data name="linktoItemMasterId" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="GuarantorPageTitle" xml:space="preserve">
+    <value>Guarantors</value>
+  </data>
+  <data name="GuarantorName" xml:space="preserve">
+    <value>Guarantor Name</value>
+  </data>
+  <data name="GuarantorFormTitle" xml:space="preserve">
+    <value>Guarantor Details</value>
+  </data>
+  <data name="WitnessPageTitle" xml:space="preserve">
+    <value>Witnesses </value>
+  </data>
+  <data name="WitnessName" xml:space="preserve">
+    <value>Witness Name</value>
+  </data>
+  <data name="WitnessFormTitle" xml:space="preserve">
+    <value>Witness Details</value>
+  </data>
+  <data name="ItemPageTitle" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="ItemName" xml:space="preserve">
+    <value>Item Name</value>
+  </data>
+  <data name="ItemDescription" xml:space="preserve">
+    <value>Item Description</value>
+  </data>
+  <data name="ItemFormTitle" xml:space="preserve">
+    <value>Item Details</value>
+  </data>
+  <data name="ContractStatusPageTitle" xml:space="preserve">
+    <value>Contract Statuses</value>
+  </data>
+  <data name="ContractStatus" xml:space="preserve">
+    <value>Contract Status</value>
+  </data>
+  <data name="ContractStatusFormTitle" xml:space="preserve">
+    <value>Contract Status Details</value>
+  </data>
+  <data name="ContractListTitle" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="ContractTitle" xml:space="preserve">
+    <value>Contract Title</value>
+  </data>
+  <data name="FileNo" xml:space="preserve">
+    <value>File No</value>
+  </data>
+  <data name="ContractDate" xml:space="preserve">
+    <value>Contract Date</value>
+  </data>
+  <data name="ContractStartDate" xml:space="preserve">
+    <value>Contract Start Date</value>
+  </data>
+  <data name="InstallmentDate" xml:space="preserve">
+    <value>Installment Date</value>
+  </data>
+  <data name="ContractAmount" xml:space="preserve">
+    <value>Contract Amount</value>
+  </data>
+  <data name="IsBasedOnMonth" xml:space="preserve">
+    <value>Is Based On Month</value>
+  </data>
+  <data name="NoOfInstallments" xml:space="preserve">
+    <value>No Of Installments</value>
+  </data>
+  <data name="InstallmentAmount" xml:space="preserve">
+    <value>Installment Amount</value>
+  </data>
+  <data name="InterestRate" xml:space="preserve">
+    <value>Interest Rate</value>
+  </data>
+  <data name="ContractFormTitle" xml:space="preserve">
+    <value>Contract Details</value>
+  </data>
+  <data name="ContractPageTitle" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="DownPayment" xml:space="preserve">
+    <value>Down Payment</value>
+  </data>
+  <data name="SettlementAmount" xml:space="preserve">
+    <value>Settlement Amount</value>
+  </data>
+  <data name="SettlementReason" xml:space="preserve">
+    <value>Settlement Reason</value>
+  </data>
+  <data name="CustomerPaymentPageTitle" xml:space="preserve">
+    <value>Customer Payments</value>
+  </data>
+  <data name="PaymentDate" xml:space="preserve">
+    <value>Payment Date</value>
+  </data>
+  <data name="ReferenceNo" xml:space="preserve">
+    <value>Reference No</value>
+  </data>
+  <data name="ChequeNo" xml:space="preserve">
+    <value>Cheque No</value>
+  </data>
+  <data name="ChequeDate" xml:space="preserve">
+    <value>Cheque Date</value>
+  </data>
+  <data name="CustomerPaymentAddEditTitle" xml:space="preserve">
+    <value>Customer Payment Details</value>
+  </data>
+  <data name="ContractInstallmentPageTitle" xml:space="preserve">
+    <value>Contract Installments</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="ContractInstallmentAddEditTitle" xml:space="preserve">
+    <value>Contract Installment Details</value>
+  </data>
+  <data name="Mobile3" xml:space="preserve">
+    <value>Mobile 3</value>
+  </data>
+  <data name="PaymentAmount" xml:space="preserve">
+    <value>Payment Amount</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="btnContinue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="btnSaveAndContinue" xml:space="preserve">
+    <value>Save &amp; Continue</value>
+  </data>
+  <data name="ContractDateFrom" xml:space="preserve">
+    <value>Contract From Date</value>
+  </data>
+  <data name="ContractDateTo" xml:space="preserve">
+    <value>Contract To Date</value>
+  </data>
+  <data name="CustomerIdNo" xml:space="preserve">
+    <value>Customer Name/IdNo</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="PhoneMobile" xml:space="preserve">
+    <value>Phone/Mobile</value>
+  </data>
+  <data name="Guarantor" xml:space="preserve">
+    <value>Guarantor</value>
+  </data>
+  <data name="GuarantorIdNo" xml:space="preserve">
+    <value>Guarantor Name / Id No</value>
+  </data>
+  <data name="WitnessIdNo" xml:space="preserve">
+    <value>WitnessName / Id No</value>
+  </data>
+  <data name="Witness" xml:space="preserve">
+    <value>Witness</value>
+  </data>
+  <data name="ContractEndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="DueAmount" xml:space="preserve">
+    <value>Due Amount</value>
+  </data>
+  <data name="Installment" xml:space="preserve">
+    <value>Installment</value>
+  </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>Remaining</value>
+  </data>
+  <data name="Settlement" xml:space="preserve">
+    <value>Settlement</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="CurrentQuantity" xml:space="preserve">
+    <value>Current Quantity</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>Calculate From Date</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>Calculate To Date</value>
+  </data>
+  <data name="IncomeAmount" xml:space="preserve">
+    <value>Income Amount</value>
+  </data>
+  <data name="ZakaahAmount" xml:space="preserve">
+    <value>Zakaah Amount</value>
+  </data>
+  <data name="ZakaahPaymentAddEditTitle" xml:space="preserve">
+    <value>Zakaah Payments Details</value>
+  </data>
+  <data name="ZakaahPaymentPageTitle" xml:space="preserve">
+    <value>Zakaah Payments</value>
+  </data>
+  <data name="PendingAmount" xml:space="preserve">
+    <value>Pending Amount</value>
+  </data>
+  <data name="PaidAmount" xml:space="preserve">
+    <value>Paid Amount</value>
+  </data>
+  <data name="ActiveSinceDate" xml:space="preserve">
+    <value>Active Since Date</value>
+  </data>
+  <data name="TotalPaidAmount" xml:space="preserve">
+    <value>Total Paid</value>
+  </data>
+  <data name="InstallmentSkipped" xml:space="preserve">
+    <value>Installment Skipped</value>
+  </data>
+  <data name="ContractReportFormTitle" xml:space="preserve">
+    <value>Contract Report</value>
+  </data>
+  <data name="AmountDue" xml:space="preserve">
+    <value>Amount Due</value>
+  </data>
+  <data name="ContractWriteDate" xml:space="preserve">
+    <value>Contract Write Date</value>
+  </data>
+  <data name="InstallmentStart" xml:space="preserve">
+    <value>Installment Start</value>
+  </data>
+  <data name="CustomerReportFormTitle" xml:space="preserve">
+    <value>Customer Report</value>
+  </data>
+  <data name="CustomerGuarantorReportFormTitle" xml:space="preserve">
+    <value>Customer Guarantor Report</value>
+  </data>
+  <data name="ContractDueReportFormTitle" xml:space="preserve">
+    <value>Due Amount Report</value>
+  </data>
+  <data name="LastPaidDate" xml:space="preserve">
+    <value>Last Paid Date</value>
+  </data>
+  <data name="btnExportToExcel" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="Last3Installments" xml:space="preserve">
+    <value>Last 3 Installments</value>
+  </data>
+  <data name="ContractAmountReportFormTitle" xml:space="preserve">
+    <value>Contract Amount Report</value>
+  </data>
+  <data name="ContractAmountTotal" xml:space="preserve">
+    <value>Total Contract Amount</value>
+  </data>
+  <data name="PendingAmountTotal" xml:space="preserve">
+    <value>Total Pending Amount</value>
+  </data>
+  <data name="IncomeAmountTotal" xml:space="preserve">
+    <value>Total Income Amount</value>
+  </data>
+  <data name="ContractInstallmentReportPageTitle" xml:space="preserve">
+    <value>Contract Installment Report</value>
+  </data>
+  <data name="ChequeAmount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="ChequeName" xml:space="preserve">
+    <value>Cheque Name</value>
+  </data>
+  <data name="ChequePageTitle" xml:space="preserve">
+    <value>Modify Cheques</value>
+  </data>
+  <data name="ChequeStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="EntryDate" xml:space="preserve">
+    <value>Entry Date</value>
+  </data>
+  <data name="GivenTo" xml:space="preserve">
+    <value>Given To</value>
+  </data>
+  <data name="btnInsert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="NoOfContracts" xml:space="preserve">
+    <value>No Of Contracts</value>
+  </data>
+  <data name="TotalInstallmentAmount" xml:space="preserve">
+    <value>Total Installment Amount</value>
+  </data>
+  <data name="ChequeMultiplePageTitle" xml:space="preserve">
+    <value>Add Cheques</value>
+  </data>
+  <data name="ChequeStatusName" xml:space="preserve">
+    <value>Cheque Status Name</value>
+  </data>
+  <data name="ChequeStatusFormTitle" xml:space="preserve">
+    <value>Cheque Status Details</value>
+  </data>
+  <data name="ChequeStatusPageTitle" xml:space="preserve">
+    <value>Cheque Status</value>
+  </data>
+  <data name="Others" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="Vat" xml:space="preserve">
+    <value>Vat (%)</value>
+  </data>
+  <data name="NetAmount" xml:space="preserve">
+    <value>Net Amount</value>
+  </data>
+  <data name="SalesPrice" xml:space="preserve">
+    <value>Sales Rate</value>
+  </data>
+  <data name="Fees" xml:space="preserve">
+    <value>Fees</value>
+  </data>
+  <data name="SalesFormTitle" xml:space="preserve">
+    <value>Sales Details</value>
+  </data>
+  <data name="GrossAmount" xml:space="preserve">
+    <value>Gross Amount</value>
+  </data>
+  <data name="TranDate" xml:space="preserve">
+    <value>Transaction Date</value>
+  </data>
+  <data name="PurchaseSalesTransactionsPageTitle" xml:space="preserve">
+    <value>Transaction Report</value>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="OpeningQuantity" xml:space="preserve">
+    <value>Opening Balance</value>
+  </data>
+  <data name="PurchaseReportPageTitle" xml:space="preserve">
+    <value>Purchase Report</value>
+  </data>
+  <data name="SalesReportPageTitle" xml:space="preserve">
+    <value>Sales Report</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="VerifiedBy" xml:space="preserve">
+    <value>Verifier</value>
+  </data>
+  <data name="Verification" xml:space="preserve">
+    <value>Verified</value>
+  </data>
+  <data name="ModifiedBy" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="OperationType" xml:space="preserve">
+    <value>Operation Type</value>
+  </data>
+  <data name="PageName" xml:space="preserve">
+    <value>Page Name</value>
+  </data>
+  <data name="TracePageTitle" xml:space="preserve">
+    <value>Trace</value>
+  </data>
+  <data name="OperationDate" xml:space="preserve">
+    <value>Operation Date</value>
+  </data>
+  <data name="BrandFormTitle" xml:space="preserve">
+    <value>Brand Details</value>
+  </data>
+  <data name="BrandName" xml:space="preserve">
+    <value>Brand Name</value>
+  </data>
+  <data name="BrandPageTitle" xml:space="preserve">
+    <value>Brands</value>
+  </data>
+  <data name="ColorFormTitle" xml:space="preserve">
+    <value>Color Details</value>
+  </data>
+  <data name="ColorName" xml:space="preserve">
+    <value>Color Name</value>
+  </data>
+  <data name="ColorPageTitle" xml:space="preserve">
+    <value>Colors</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>Category Name</value>
+  </data>
+  <data name="Hasurl" xml:space="preserve">
+    <value>Has url?</value>
+  </data>
+  <data name="FilterDueDate" xml:space="preserve">
+    <value>Filter Due Date</value>
+  </data>
+  <data name="BillNo" xml:space="preserve">
+    <value>Bill no</value>
+  </data>
+  <data name="ReceiptNo" xml:space="preserve">
+    <value>Receipt no</value>
+  </data>
+  <data name="PaymentReceivedPageTitle" xml:space="preserve">
+    <value>Payment Received Report</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="InvalidMobile" xml:space="preserve">
+    <value>Invalid Mobile Number</value>
+  </data>
+  <data name="ItemStockReportPageTitle" xml:space="preserve">
+    <value>Item Stock Report</value>
+  </data>
+  <data name="InvalidIdNo" xml:space="preserve">
+    <value>Invalid Id No</value>
+  </data>
+  <data name="ContactPersonName1" xml:space="preserve">
+    <value>Contact Person Name 1</value>
+  </data>
+  <data name="ContactPersonName2" xml:space="preserve">
+    <value>Contact Person Name 2</value>
+  </data>
+  <data name="Contact1" xml:space="preserve">
+    <value>Contact 1</value>
+  </data>
+  <data name="Contact2" xml:space="preserve">
+    <value>Contact 2</value>
+  </data>
+  <data name="PersonName1" xml:space="preserve">
+    <value>Contact Person Name 1</value>
+  </data>
+  <data name="PersonName2" xml:space="preserve">
+    <value>Contact Person Name 2</value>
+  </data>
+  <data name="DueInstallments" xml:space="preserve">
+    <value>Due Installments</value>
+  </data>
+  <data name="ShowZeroValue" xml:space="preserve">
+    <value>Show Zero Value</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Creator</value>
+  </data>
+  <data name="VatAmount" xml:space="preserve">
+    <value>Vat Amount</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="LastPaidAmount" xml:space="preserve">
+    <value>Last Paid Amount</value>
+  </data>
+  <data name="btnSaveAndPrint" xml:space="preserve">
+    <value>Save &amp; Print</value>
+  </data>
+  <data name="ItemCode" xml:space="preserve">
+    <value>Item Code</value>
+  </data>
+  <data name="DiscountAmount" xml:space="preserve">
+    <value>Discount Amount</value>
+  </data>
+  <data name="IsRedFlag" xml:space="preserve">
+    <value>Red Flag</value>
+  </data>
+  <data name="District" xml:space="preserve">
+    <value>District</value>
+  </data>
+  <data name="Occupation" xml:space="preserve">
+    <value>Occupation</value>
+  </data>
+  <data name="PlaceOfWork" xml:space="preserve">
+    <value>Place Of Work</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="Brother" xml:space="preserve">
+    <value>Brother</value>
+  </data>
+  <data name="CityOfResidence" xml:space="preserve">
+    <value>City Of Residence</value>
+  </data>
+  <data name="Father" xml:space="preserve">
+    <value>Father</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="Mother" xml:space="preserve">
+    <value>Mother</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Relation1" xml:space="preserve">
+    <value>Relation 1</value>
+  </data>
+  <data name="Relation2" xml:space="preserve">
+    <value>Relation 2</value>
+  </data>
+  <data name="Sister" xml:space="preserve">
+    <value>Sister</value>
+  </data>
+  <data name="BankAccountNumber" xml:space="preserve">
+    <value>Bank Account Number</value>
+  </data>
+  <data name="BankAccountNumber2" xml:space="preserve">
+    <value>Bank Account Number 2</value>
+  </data>
+  <data name="BankAccountNumber3" xml:space="preserve">
+    <value>Bank Account Number 3</value>
+  </data>
+  <data name="BankAccountNumber4" xml:space="preserve">
+    <value>Bank Account Number 4</value>
+  </data>
+  <data name="ASC" xml:space="preserve">
+    <value>ASC</value>
+  </data>
+  <data name="DESC" xml:space="preserve">
+    <value>DESC</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="btnVerify" xml:space="preserve">
+    <value>Verify</value>
+  </data>
+  <data name="CustomerFollowupPageTitle" xml:space="preserve">
+    <value>Collection And Followup</value>
+  </data>
+</root>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="" description="">
+    <siteMapNode url="default.aspx" title="Dashboard" description="" icon="fa fa-dashboard" />
+    <siteMapNode url="#" title="Master" description="" icon="fa fa-cog">
+      <siteMapNode url="company.aspx" title="Company" description="" />
+      <siteMapNode url="role.aspx" title="Roles" description="" />
+      <siteMapNode url="user.aspx" title="Users" description="" />
+      <siteMapNode url="bank.aspx" title="Banks" description="" />
+      <siteMapNode url="paymenttype.aspx" title="Payment Type" description="" />
+      <siteMapNode url="chequestatus.aspx" title="Cheque Status" description="" />
+      <siteMapNode url="customer.aspx" title="Customer" description="" />
+      <siteMapNode url="guarantor.aspx" title="Guarantor" description="" />
+      <siteMapNode url="witness.aspx" title="Witness" description="" />
+      <siteMapNode url="item.aspx" title="Items" description="" />
+      <siteMapNode url="brand.aspx" title="Brands" description="" />
+      <siteMapNode url="color.aspx" title="Colors" description="" />
+    </siteMapNode>
+    <siteMapNode url="#" title="Transactions" description="" icon="fa fa-money">
+      <siteMapNode url="purchase.aspx" title="Purchase" description="" />
+      <siteMapNode url="sales.aspx" title="Sales" description="" />
+      <siteMapNode url="contract.aspx" title="Contract" description="" />
+      <siteMapNode url="customerpayment.aspx" title="Payment" description="" />
+      <siteMapNode url="contractinstallment.aspx" title="Contract Installments" description="" />
+      <siteMapNode url="chequemultiple.aspx" title="Cheques Additions" description="" />
+      <!--<siteMapNode url="cheque.aspx" title="Cheques Modifications" description="" />-->
+      <siteMapNode url="zakaahpayment.aspx" title="Zakaah" description="" />
+      <!--<siteMapNode url="calling.aspx" title="Calling" description="" />      
+      <siteMapNode url="sales.aspx" title="Sales" description="" />-->
+    </siteMapNode>
+    <siteMapNode url="#" title="Reports" description="" icon="fa fa-line-chart">
+      <siteMapNode url="itemstockreport.aspx" title="Item Stock Report" description="" />
+      <siteMapNode url="contractreport.aspx" title="General Report" description="" />
+      <siteMapNode url="customerreport.aspx" title="Customer Report" description="" />
+      <siteMapNode url="customerguarantorreport.aspx" title="Customer Guarantor Report" description="" />
+      <siteMapNode url="contractduereport.aspx" title="Contract Due Report" description="" />
+      <siteMapNode url="contractamountreport.aspx" title="Contract Amount Report" description="" />
+      <siteMapNode url="contractinstallmentreport.aspx" title="Contract Installments Report" description="" />
+      <siteMapNode url="contractlistreport.aspx" title="Contract List Report" description="" />
+      <siteMapNode url="paymentreceivedreport.aspx" title="Payment Received Report" description="" />
+      <!--<siteMapNode url="purchasesalestransactions.aspx" title="Purchase Sales Report" description="" />-->
+      <siteMapNode url="purchasereport.aspx" title="Purchase Report" description="" />
+      <siteMapNode url="salesreport.aspx" title="Sales Report" description="" />
+      <siteMapNode url="trace.aspx" title="Trace data" description="" />
+      <siteMapNode url="userlog.aspx" title="User Log" description="" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

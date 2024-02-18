@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DFB9C630-6820-4D1C-960B-09A0A1769EF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>loanLibrary</RootNamespace>
+    <AssemblyName>loanLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Image.cs" />
+    <Compile Include="loanBankMasterDAL.cs" />
+    <Compile Include="loanBrandMasterDAL.cs" />
+    <Compile Include="loanCallingMasterDAL.cs" />
+    <Compile Include="loanCategoryMasterDAL.cs" />
+    <Compile Include="loanChequeMasterDAL.cs" />
+    <Compile Include="loanChequeStatusMasterDAL.cs" />
+    <Compile Include="loanColorMasterDAL.cs" />
+    <Compile Include="loanCompanyMasterDAL.cs" />
+    <Compile Include="loanContractGuarantorTranDAL.cs" />
+    <Compile Include="loanContractInstallmentTranDAL.cs" />
+    <Compile Include="loanContractItemTranDAL.cs" />
+    <Compile Include="loanCustomerFollowupDAL.cs" />
+    <Compile Include="loanContractMasterDAL.cs" />
+    <Compile Include="loanContractStatusMasterDAL.cs" />
+    <Compile Include="loanContractWitnessTranDAL.cs" />
+    <Compile Include="loanCustomerMasterDAL.cs" />
+    <Compile Include="loanSalesItemTranDAL.cs" />
+    <Compile Include="loanSalesMasterDAL.cs" />
+    <Compile Include="loanTraceMasterDAL.cs" />
+    <Compile Include="loanZakaahPaymentMasterDAL.cs" />
+    <Compile Include="loanCustomerPaymentMasterDAL.cs" />
+    <Compile Include="loanErrorLogDAL.cs" />
+    <Compile Include="loanGlobalsDAL.cs" />
+    <Compile Include="loanGuarantorMasterDAL.cs" />
+    <Compile Include="loanInstallmentStatusMasterDAL.cs" />
+    <Compile Include="loanItemMasterDAL.cs" />
+    <Compile Include="loanObjectFactoryDAL.cs" />
+    <Compile Include="loanPaymentTypeMasterDAL.cs" />
+    <Compile Include="loanPurchaseMasterDAL.cs" />
+    <Compile Include="loanUserMasterDAL.cs" />
+    <Compile Include="loanUserTranDAL.cs" />
+    <Compile Include="loanRoleMasterDAL.cs" />
+    <Compile Include="loanRoleRightsGroupMasterDAL.cs" />
+    <Compile Include="loanRoleRightsMasterDAL.cs" />
+    <Compile Include="loanRoleRightsTranDAL.cs" />
+    <Compile Include="loanWitnessMasterDAL.cs" />
+    <Compile Include="Mail.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
