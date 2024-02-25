@@ -214,13 +214,11 @@
                                     <div class="col-md-6"> 
                                           <asp:TextBox  CssClass=" form-control " ID="ltrlNotes" runat="server"></asp:TextBox>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-4">
                                           <asp:Button  CssClass="btn btn-primary"  runat="server" Text="Submit" OnClick="updateNoteBtn_Click" />
-                                    </div>
-
-                                    <div class="col-md-2">
                                          <asp:LinkButton ID="lbtnDelete" runat="server" CommandName="DeleteRecord" OnClientClick="javascript:return ConfirmDelete(this);" CssClass="btn btn-danger btn-sm fa fa-trash" title="Delete"></asp:LinkButton>
                                     </div>
+ 
                                   
                                 </div> 
                             </td>
