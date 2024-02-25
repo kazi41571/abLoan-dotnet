@@ -46,7 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CustomDataPager">
-      <HintPath>D:\Projects\DLL\CustomDataPager.dll</HintPath>
+      <HintPath>..\packages\CustomDataPager.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationCore" />

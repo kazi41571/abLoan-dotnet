@@ -27,6 +27,7 @@
       <siteMapNode url="zakaahpayment.aspx" title="الزكاة" description="" />
       <!--<siteMapNode url="calling.aspx" title="سجلات المكالمات" description="" />      
       <siteMapNode url="sales.aspx" title="المبيعات" description="" />-->
+		<siteMapNode url="customerfollowup.aspx" title="متابعة العقود" description="" />
 
     </siteMapNode>
     <siteMapNode url="#" title="تقارير" description="" icon="fa fa-line-chart">

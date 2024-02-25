@@ -190,11 +190,15 @@
                         </div>
                     </div>
 
-                    <asp:ListView ID="lvCustomerFollowedup" DataKeyNames="CustomerFollowupId" OnItemDataBound="lvCustomerFollowedup_ItemDataBound" runat="server">
+                    <asp:ListView ID="lvCustomerFollowedup" DataKeyNames="CustomerFollowupId" OnItemCommand="lvCustomerFollowedup_ItemCommand" 
+                        OnItemDataBound="lvCustomerFollowedup_ItemDataBound" runat="server">
                         <ItemTemplate>
-                            <h2>
-                                <asp:Label ID="lblCustomer" runat="server"></asp:Label>
 
+                        <asp:HiddenField  ID="lblCustomerFollowupId" runat="server"   />
+                            <h2> 
+                                 <asp:Label ID="lblCustomerIdNo" runat="server"></asp:Label> 
+                                ::
+                                <asp:Label ID="lblCustomer" runat="server"></asp:Label> 
                             </h2>
                      
 
@@ -203,19 +207,29 @@
                             <td>
                                 <div class="container row" runat="server">
                                     <!-- Your form inputs here -->
-                                    <asp:HiddenField  ID="lblCustomerFollowupId" runat="server"   />
+                                   
                                     <div class="col-md-2">
                                               <label class="control-label"><%= Resources.Resource.Notes %></label>
                                     </div>
-                                    <div class="col-md-8"> 
+                                    <div class="col-md-6"> 
                                           <asp:TextBox  CssClass=" form-control " ID="ltrlNotes" runat="server"></asp:TextBox>
                                     </div>
-                                    <div class="">
+                                    <div class="col-md-2">
                                           <asp:Button  CssClass="btn btn-primary"  runat="server" Text="Submit" OnClick="updateNoteBtn_Click" />
+                                    </div>
+
+                                    <div class="col-md-2">
+                                         <asp:LinkButton ID="lbtnDelete" runat="server" CommandName="DeleteRecord" OnClientClick="javascript:return ConfirmDelete(this);" CssClass="btn btn-danger btn-sm fa fa-trash" title="Delete"></asp:LinkButton>
                                     </div>
                                   
                                 </div> 
                             </td>
+
+                         
+
+    
+
+
                             <asp:ListView ID="lvContractMaster"   runat="server" DataKeyNames="ContractMasterId" DataSource='<%# getContractDataSource(Eval("linktoCustomerMasterId"))  %>' 
                                 OnItemCommand="lvContractMaster_ItemCommand" OnItemDataBound="lvContractMaster_ItemDataBound">
                                 
@@ -224,8 +238,7 @@
                                         <div class="table-responsive">
                                             <table id="itemPlaceholderContainer" runat="server" class="table table-hover">
                                                 <tr>
-                                                    <th><%= Resources.Resource.Customer %>
-                                                    </th>
+                                                   
                                                     <th><%= Resources.Resource.ContractFormTitle %>
                                                     </th>
                                                     <th><%= Resources.Resource.Installment %>
@@ -246,15 +259,11 @@
                                 </LayoutTemplate>
                                 <ItemTemplate>
                                     <tr valign="top">
-                                        <td>
-                                            <span class="text-muted"><%= Resources.Resource.Name %>:
-                                            </span>
-
-                                        </td>
+                                        
                                         <td>
                                             <span class="text-muted"><%= Resources.Resource.Contract %>:
                                             </span>
-
+                                               <asp:Literal ID="ltrlContractTitle" runat="server"></asp:Literal>
                                         </td>
                                         <td>
 
@@ -395,6 +404,7 @@
                                     <asp:Button ID="btnSaveAndNew" runat="server" Text="<% $Resources:Resource, btnSaveAndNew %>" CssClass="btn btn-primary" OnClick="btnSave_Click" ValidationGroup="followupdetails" />
 
                                     <asp:Button ID="btnSave" runat="server" Text="<% $Resources:Resource, btnSave %>" CssClass="btn btn-primary" OnClick="btnSave_Click" ValidationGroup="followupdetails" />
+                                    
 
                                     <asp:Button ID="btnClose" runat="server" Text="<% $Resources:Resource, btnClose %>" CssClass="btn btn-default" CausesValidation="false" data-dismiss="modal" />
 

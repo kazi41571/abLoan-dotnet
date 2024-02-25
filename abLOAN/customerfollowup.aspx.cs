@@ -226,13 +226,59 @@ namespace abLOAN
             }
 
 }
+
+
+        //protected void deleteCustomerRecordBtn_Click(object sender, EventArgs e)
+        //{
+        //    // Get the reference to the button that was clicked
+        //    Button btnSubmit = (Button)sender;
+
+        //    // Find the form associated with the button
+        //    Control container = btnSubmit.NamingContainer;
+
+        //    // Find the TextBox within the form
+
+        //    HiddenField lblCustomerFollowupId = (HiddenField)container.FindControl("lblCustomerFollowupId");
+        //    // Access the value of the TextBox
+
+        //    int id = int.Parse(lblCustomerFollowupId.Value);
+
+
+        //    try
+        //    {
+        //        loanCustomerFollowupDAL objCustomerFollowupDAL = new loanCustomerFollowupDAL();
+        //        objCustomerFollowupDAL.CustomerFollowupId = id;
+        //        var rsStatus = objCustomerFollowupDAL.DeleteCustomerfollowup();
+
+        //        if (rsStatus == loanRecordStatus.Error)
+        //        {
+        //            loanAppGlobals.ShowMessage(loanMessagesDAL.DeleteFail, loanMessageIcon.Error);
+        //            return;
+        //        }
+        //        else if (rsStatus == loanRecordStatus.Success)
+        //        {
+        //            loanAppGlobals.ShowMessage(loanMessagesDAL.DeleteSuccess, loanMessageIcon.Success);
+        //
+        //          FillFollowdupCustomerMaster();
+        //          FillContractMaster();
+        //      
+        //        }
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loanAppGlobals.SaveError(ex);
+        //    }
+
+        //}
         protected void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
                 loanCustomerFollowupDAL objCustomerFollowupDAL = new loanCustomerFollowupDAL();
                 objCustomerFollowupDAL.linktoCompanyMasterId = ((loanUser)Session[loanSessionsDAL.UserSession]).CompanyMasterId;
-                objCustomerFollowupDAL.linktoCustomerMasterId = Convert.ToInt32(ddlAuditors.SelectedValue);
+                objCustomerFollowupDAL.linktoCustomerMasterId = Convert.ToInt32(hdnCustomerMasterId.Value);
                 objCustomerFollowupDAL.linktoUserMasterId = Convert.ToInt32(ddlAuditors.SelectedValue);
 
 
@@ -311,7 +357,47 @@ namespace abLOAN
         #region List Methods
 
 
+        
 
+             protected void lvCustomerFollowedup_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            try
+            {
+                if (e.CommandName.Equals("EditRecord", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    //  FillContractMaster(Convert.ToInt32(((ListView)sender).DataKeys[e.Item.DataItemIndex].Value));
+                }
+                else if (e.CommandName.Equals("VerifyRecord", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    string pageName = Path.GetFileNameWithoutExtension(Page.AppRelativeVirtualPath) + "master";
+                    VerifyRecord(pageName, Convert.ToInt32(((ListView)sender).DataKeys[e.Item.DataItemIndex].Value));
+                }
+                else if (e.CommandName.Equals("DeleteRecord", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    loanUser.CheckRoleRights(loanRoleRights.DeleteRecord);
+
+                    loanCustomerFollowupDAL objCustomerFollowupDAL = new loanCustomerFollowupDAL();
+                    objCustomerFollowupDAL.CustomerFollowupId = Convert.ToInt32(((ListView)sender).DataKeys[e.Item.DataItemIndex].Value);
+                    objCustomerFollowupDAL.SessionId = ((loanUser)Session[loanSessionsDAL.UserSession]).SessionId;
+
+                    loanRecordStatus rsStatus = objCustomerFollowupDAL.DeleteCustomerfollowup();
+                    if (rsStatus == loanRecordStatus.Success)
+                    {
+                        loanAppGlobals.ShowMessage(loanMessagesDAL.DeleteSuccess, loanMessageIcon.Success);
+                        FillContractMaster();
+                        FillFollowdupCustomerMaster();
+                    }
+                    else
+                    {
+                        loanAppGlobals.ShowMessage(loanMessagesDAL.DeleteFail, loanMessageIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                loanAppGlobals.SaveError(ex);
+            }
+        }
         protected void lvUserMaster_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             try
@@ -429,7 +515,7 @@ namespace abLOAN
                     //ltrlBankAccountNumber2.Text = objContractMasterDAL.BankAccountNumber2;
                     //ltrlBankAccountNumber3.Text = objContractMasterDAL.BankAccountNumber3;
                     //ltrlBankAccountNumber4.Text = objContractMasterDAL.BankAccountNumber4;
-                    //ltrlContractTitle.Text = objContractMasterDAL.ContractTitle;
+                     ltrlContractTitle.Text = objContractMasterDAL.ContractTitle;
                     //hlnkContractTitle.Text = objContractMasterDAL.ContractTitle;
                     //if (objContractMasterDAL.Links != "")
                     //{
@@ -624,9 +710,11 @@ namespace abLOAN
 
                    
                     Label lblCustomer = (Label) e.Item.FindControl("lblCustomer");
+                    Label lblCustomerIdNo = (Label)e.Item.FindControl("lblCustomerIdNo");
                     TextBox ltrlNotes = (TextBox)e.Item.FindControl("ltrlNotes");
                     
                     lblCustomer.Text = objCustomerFollowupDAL.Customer;
+                    lblCustomerIdNo.Text = objCustomerFollowupDAL.linktoCustomerMasterId.ToString();
                     ltrlNotes.Text = objCustomerFollowupDAL.Notes ?? "" ;
 
 

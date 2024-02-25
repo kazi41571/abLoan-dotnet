@@ -190,7 +190,7 @@ namespace loanLibrary
         }
         #endregion
 
-        #region Insert
+        #region Update Note
         public loanRecordStatus UpdateCustomerfollowupNotes()
         {
             SqlConnection SqlCon = null;
@@ -228,6 +228,8 @@ namespace loanLibrary
             }
         }
         #endregion
+
+
 
 
         #region Insert
@@ -317,6 +319,48 @@ namespace loanLibrary
             }
         }
         #endregion
+
+
+
+
+        #region Delete Record
+        public loanRecordStatus DeleteCustomerfollowup()
+        {
+            SqlConnection SqlCon = null;
+            SqlCommand SqlCmd = null;
+            try
+            {
+                SqlCon = loanObjectFactoryDAL.CreateConnection();
+                SqlCmd = new SqlCommand("loanCustomerFollowup_Delete", SqlCon);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+
+                SqlCmd.Parameters.Add("@CustomerFollowupId", SqlDbType.Int).Value = this.CustomerFollowupId;  
+                SqlCmd.Parameters.Add("@Status", SqlDbType.SmallInt).Direction = ParameterDirection.Output;
+
+                SqlCon.Open();
+                SqlCmd.ExecuteNonQuery();
+                SqlCon.Close();
+
+
+                loanRecordStatus rs = (loanRecordStatus)(short)SqlCmd.Parameters["@Status"].Value;
+                return rs;
+            }
+            catch (Exception ex)
+            {
+                loanGlobalsDAL.SaveError(ex);
+                return loanRecordStatus.Error;
+            }
+            finally
+            {
+                loanObjectFactoryDAL.DisposeCommand(SqlCmd);
+                loanObjectFactoryDAL.DisposeConnection(SqlCon);
+            }
+        }
+        #endregion
+
+
+
 
     }
 }
