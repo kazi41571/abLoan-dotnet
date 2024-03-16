@@ -78,40 +78,13 @@ namespace abLOAN
         protected global::System.Web.UI.WebControls.TextBox txtFilterCustomer;
 
         /// <summary>
-        /// txtFilterContractTitle control.
+        /// txtFilterUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFilterContractTitle;
-
-        /// <summary>
-        /// ddlFilterBank control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFilterBank;
-
-        /// <summary>
-        /// txtFilterFileNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFilterFileNo;
-
-        /// <summary>
-        /// cmvFilterFileNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cmvFilterFileNo;
+        protected global::System.Web.UI.WebControls.TextBox txtFilterUsername;
 
         /// <summary>
         /// txtFilterContractDate control.
@@ -157,51 +130,6 @@ namespace abLOAN
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlFilterContractStatus;
-
-        /// <summary>
-        /// ddlFilterVerification control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFilterVerification;
-
-        /// <summary>
-        /// ddlFilterHasurl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFilterHasurl;
-
-        /// <summary>
-        /// txtFilterDueInstallments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFilterDueInstallments;
-
-        /// <summary>
-        /// cvFilterDueInstallments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cvFilterDueInstallments;
-
-        /// <summary>
-        /// txtFilterBankAccountNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFilterBankAccountNumber;
 
         /// <summary>
         /// ddlSortBy control.

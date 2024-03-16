@@ -55,6 +55,7 @@
     <Compile Include="loanContractGuarantorTranDAL.cs" />
     <Compile Include="loanContractInstallmentTranDAL.cs" />
     <Compile Include="loanContractItemTranDAL.cs" />
+    <Compile Include="loanFollowupNoteDAL.cs" />
     <Compile Include="loanCustomerFollowupDAL.cs" />
     <Compile Include="loanContractMasterDAL.cs" />
     <Compile Include="loanContractStatusMasterDAL.cs" />

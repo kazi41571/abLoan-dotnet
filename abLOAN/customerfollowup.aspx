@@ -54,37 +54,20 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="col-md-4 col-sm-6">
                                                 <div class="form-group">
-                                                    <label class="col-sm-5 control-label"><%= Resources.Resource.ContractTitle %></label>
+                                                    <label class="col-sm-5 control-label"><%= Resources.Resource.Username %></label>
                                                     <div class="col-sm-7">
-                                                        <asp:TextBox ID="txtFilterContractTitle" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                        <asp:TextBox ID="txtFilterUsername" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="col-sm-5 control-label"><%= Resources.Resource.Bank %></label>
-                                                    <div class="col-sm-7">
-                                                        <asp:DropDownList ID="ddlFilterBank" runat="server" CssClass="form-control input-sm"></asp:DropDownList>
-                                                    </div>
-                                                </div>
-                                            </div>
+
+
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-4 col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="col-sm-5 control-label"><%= Resources.Resource.FileNo %></label>
-                                                    <div class="col-sm-7">
-                                                        <asp:TextBox ID="txtFilterFileNo" runat="server" CssClass="form-control input-sm"></asp:TextBox>
-                                                        <div class="text-danger">
-                                                            <asp:CompareValidator ID="cmvFilterFileNo" runat="server"
-                                                                ControlToValidate="txtFilterFileNo" Display="Dynamic" Operator="DataTypeCheck" SetFocusOnError="true"
-                                                                Type="Integer" ValidationGroup="FilterContractMaster"><%= Resources.Messages.InputRequired %> <%=Resources.Resource.FileNo %></asp:CompareValidator>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+
 
                                             <div class="col-md-4 col-sm-6">
                                                 <div class="form-group">
@@ -102,7 +85,9 @@
                                             <div class="col-md-4 col-sm-6">
                                                 <div class="form-group">
                                                     <div class="col-sm-7">
-                                                        <asp:TextBox ID="txtFilterContractDateTo" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                        <asp:TextBox ID="txtFilterContractDateTo" runat="server" CssClass="form-control input-sm">
+
+                                                        </asp:TextBox>
                                                         <div class="text-danger">
                                                             <asp:RequiredFieldValidator ID="rfvFilterContractDateTo" runat="server"
                                                                 ControlToValidate="txtFilterContractDateTo" Display="Dynamic"
@@ -119,51 +104,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="col-sm-5 control-label"><%= Resources.Resource.Verification %></label>
-                                                    <div class="col-sm-7">
-                                                        <asp:DropDownList ID="ddlFilterVerification" runat="server" CssClass="form-control input-sm">
-                                                            <asp:ListItem Text="- SELECT -" Value=""></asp:ListItem>
-                                                            <asp:ListItem Text="<% $Resources:Resource, Yes %>" Value="Yes"></asp:ListItem>
-                                                            <asp:ListItem Text="<% $Resources:Resource, No %>" Value="No"></asp:ListItem>
-                                                        </asp:DropDownList>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="col-sm-5 control-label"><%= Resources.Resource.Hasurl %></label>
-                                                    <div class="col-sm-7">
-                                                        <asp:DropDownList ID="ddlFilterHasurl" runat="server" CssClass="form-control input-sm">
-                                                            <asp:ListItem Text="- SELECT -" Value=""></asp:ListItem>
-                                                            <asp:ListItem Text="<% $Resources:Resource, Yes %>" Value="Yes"></asp:ListItem>
-                                                            <asp:ListItem Text="<% $Resources:Resource, No %>" Value="No"></asp:ListItem>
-                                                        </asp:DropDownList>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="col-sm-5 control-label"><%= Resources.Resource.DueInstallments %></label>
-                                                    <div class="col-sm-7">
-                                                        <asp:TextBox ID="txtFilterDueInstallments" runat="server" CssClass="form-control input-sm"></asp:TextBox>
-                                                        <div class="text-danger">
-                                                            <asp:CompareValidator ID="cvFilterDueInstallments" runat="server"
-                                                                ControlToValidate="txtFilterDueInstallments" Display="Dynamic" Operator="DataTypeCheck" SetFocusOnError="true"
-                                                                Type="Integer" ValidationGroup="FilterContractMaster"><%= Resources.Messages.InputRequired %> <%=Resources.Resource.DueInstallments %></asp:CompareValidator>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="col-sm-5 control-label"><%= Resources.Resource.BankAccountNumber %></label>
-                                                    <div class="col-sm-7">
-                                                        <asp:TextBox ID="txtFilterBankAccountNumber" runat="server" CssClass="form-control input-sm"></asp:TextBox>
-                                                    </div>
-                                                </div>
-                                            </div>
+
+
+
+
+
                                             <div class="col-md-4 col-sm-6">
                                                 <div class="form-group">
                                                     <label class="col-sm-5 control-label"><%= Resources.Resource.SortBy %></label>
@@ -190,107 +135,218 @@
                         </div>
                     </div>
 
-                    <asp:ListView ID="lvCustomerFollowedup" DataKeyNames="CustomerFollowupId" OnItemCommand="lvCustomerFollowedup_ItemCommand" 
+                    <asp:ListView ID="lvCustomerFollowedup" DataKeyNames="CustomerFollowupId"
+                        OnItemCommand="lvCustomerFollowedup_ItemCommand"
                         OnItemDataBound="lvCustomerFollowedup_ItemDataBound" runat="server">
                         <ItemTemplate>
 
-                        <asp:HiddenField  ID="lblCustomerFollowupId" runat="server"   />
-                            <h2> 
-                                 <asp:Label ID="lblCustomerIdNo" runat="server"></asp:Label> 
-                                ::
-                                <asp:Label ID="lblCustomer" runat="server"></asp:Label> 
-                            </h2>
-                     
+                            <asp:HiddenField ID="lblCustomerFollowupId" runat="server" />
+                            <div class="card-container">
+
+
+                                <div class="container row">
+
+                                    <div class="col-md-8">
+                                        <div>
+
+                                            <asp:Label class="primary-card" ID="lblCustomerIdNo" runat="server"></asp:Label>
+                                        </div>
+                                        <h4>
+                                            <b>
+                                                <asp:Label ID="lblCustomer" runat="server"></asp:Label>
+                                            </b>
+
+                                        </h4>
+                                        <h5>
+
+                                            <asp:Label ID="lblMobile1" runat="server"></asp:Label>
+                                        </h5>
+
+                                        <h5>
+
+                                            <asp:Label ID="lblMobile2" runat="server"></asp:Label>
+                                        </h5>
+
+                                        <h5>
+
+                                            <asp:Label ID="lblMobile3" runat="server"></asp:Label>
+                                        </h5>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div>
+
+                                            <asp:LinkButton ID="lbtnEdit" runat="server" CommandName="EditRecord" CssClass="btn btn-primary btn-sm fa fa-edit" title="Edit"></asp:LinkButton>
+                                            <asp:LinkButton ID="lbtnDelete" runat="server" CommandName="DeleteRecord" OnClientClick="javascript:return ConfirmDelete(this);" CssClass="btn btn-danger btn-sm fa fa-trash" title="Delete"></asp:LinkButton>
+                                        </div>
 
 
 
-                            <td>
+                                    </div>
+
+                                </div>
+
+
                                 <div class="container row" runat="server">
                                     <!-- Your form inputs here -->
-                                   
-                                    <div class="col-md-2">
-                                              <label class="control-label"><%= Resources.Resource.Notes %></label>
+
+
+                                    <div class="col-md-8">
+                                        <asp:TextBox CssClass=" form-control " ID="ltrlNotes"
+                                            runat="server" placeholder="Add Your Note"></asp:TextBox>
                                     </div>
-                                    <div class="col-md-6"> 
-                                          <asp:TextBox  CssClass=" form-control " ID="ltrlNotes" runat="server"></asp:TextBox>
+
+                                    <div>
+
+                                        <asp:Button CssClass="btn btn-primary"
+                                            runat="server" Text="Add Note" OnClick="insertNoteBtn_Click" />
                                     </div>
-                                    <div class="col-md-4">
-                                          <asp:Button  CssClass="btn btn-primary"  runat="server" Text="Submit" OnClick="updateNoteBtn_Click" />
-                                         <asp:LinkButton ID="lbtnDelete" runat="server" CommandName="DeleteRecord" OnClientClick="javascript:return ConfirmDelete(this);" CssClass="btn btn-danger btn-sm fa fa-trash" title="Delete"></asp:LinkButton>
-                                    </div>
- 
-                                  
-                                </div> 
-                            </td>
-
-                         
-
-    
 
 
-                            <asp:ListView ID="lvContractMaster"   runat="server" DataKeyNames="ContractMasterId" DataSource='<%# getContractDataSource(Eval("linktoCustomerMasterId"))  %>' 
-                                OnItemCommand="lvContractMaster_ItemCommand" OnItemDataBound="lvContractMaster_ItemDataBound">
-                                
-                                <LayoutTemplate>
-                                    <div class="panel panel-default">
-                                        <div class="table-responsive">
-                                            <table id="itemPlaceholderContainer" runat="server" class="table table-hover">
-                                                <tr>
-                                                   
-                                                    <th><%= Resources.Resource.ContractFormTitle %>
-                                                    </th>
-                                                    <th><%= Resources.Resource.Installment %>
-                                                    </th>
-                                                    <th><%= "Last 3 Installments" %>
-                                                    </th>
+                                </div>
 
-                                                    <th style="width: 125px"><%= Resources.Resource.ContractStatus %>
-                                                    </th>
 
-                                                </tr>
+                            </div>
 
-                                                <tr id="itemPlaceholder" runat="server">
-                                                </tr>
-                                            </table>
+                            <div class="card-container">
+                                <asp:ListView ID="lvFollowupNote" runat="server"
+                                    DataKeyNames="FollowupNoteId"
+                                    DataSource='<%# getFollowUpNoteDataSource(Eval("CustomerFollowupId"))  %>'
+                                    OnItemCommand="pgrFollowupNote_ItemCommand"
+                                    OnItemDataBound="lvFollowupNote_ItemDataBound">
+
+                                    <LayoutTemplate>
+                                        <div class="panel panel-default">
+                                            <div class="table-responsive">
+                                                <table id="itemPlaceholderContainer" runat="server" class="table table-hover">
+                                                    <tr>
+
+                                                        <th>ID
+                                                        </th>
+
+                                                        <th>Note
+                                                        </th>
+                                                        <th>Username
+                                                        </th>
+
+
+                                                        <th style="width: 125px">Datetime
+                                                        </th>
+
+                                                    </tr>
+
+                                                    <tr id="itemPlaceholder" runat="server">
+                                                    </tr>
+                                                </table>
+                                            </div>
                                         </div>
-                                    </div>
-                                </LayoutTemplate>
-                                <ItemTemplate>
-                                    <tr valign="top">
-                                        
-                                        <td>
-                                            <span class="text-muted"><%= Resources.Resource.Contract %>:
-                                            </span>
-                                               <asp:Literal ID="ltrlContractTitle" runat="server"></asp:Literal>
-                                        </td>
-                                        <td>
+                                    </LayoutTemplate>
+                                    <ItemTemplate>
+                                        <tr valign="top">
 
-                                            <span class="text-muted"><%= Resources.Resource.InstallmentDate %>:
-                                            </span>
-                                            <asp:Literal ID="ltrlInstallmentDate" runat="server"></asp:Literal>
+                                            <td>
+
+                                                <asp:Literal ID="ltrlFollowupNoteId" runat="server"></asp:Literal>
+                                            </td>
+                                            <td>
+
+                                                <asp:Literal ID="ltrlNote" runat="server"></asp:Literal>
+                                            </td>
+                                            <td>
+
+                                                <asp:Literal ID="ltrlUsername" runat="server"></asp:Literal>
 
 
-                                        </td>
-                                        <td>
+                                            </td>
+                                            <td>
 
-                                            <asp:Label ID="lblLast3Payments" runat="server"></asp:Label>
+                                                <asp:Label ID="ltrlCreateDate" runat="server"></asp:Label>
 
-                                        </td>
+                                            </td>
 
-                                        <td style="padding-top: 15px;">
-                                            <asp:Label ID="lblContractStatus" runat="server"></asp:Label>
-                                        </td>
+                                            <td style="padding-top: 15px;"></td>
 
-                                    </tr>
+                                        </tr>
 
-                                </ItemTemplate>
-                                <EmptyDataTemplate>
-                                    <div class="alert alert-info">
-                                        <%= Resources.Resource.NoRecordMessage %>
-                                    </div>
-                                </EmptyDataTemplate>
-                            </asp:ListView>
+                                    </ItemTemplate>
+                                    <EmptyDataTemplate>
+                                        <div class="alert alert-info">
+                                            <%= Resources.Resource.NoRecordMessage %>
+                                        </div>
+                                    </EmptyDataTemplate>
+                                </asp:ListView>
 
+                            </div>
+
+                            <div class="card-container">
+
+                                <asp:ListView ID="lvContractMaster" runat="server"
+                                    DataKeyNames="ContractMasterId"
+                                    DataSource='<%# getContractDataSource(Eval("linktoCustomerMasterId"))  %>'
+                                    OnItemCommand="lvContractMaster_ItemCommand"
+                                    OnItemDataBound="lvContractMaster_ItemDataBound">
+
+                                    <LayoutTemplate>
+                                        <div class="panel panel-default">
+                                            <div class="table-responsive">
+                                                <table id="itemPlaceholderContainer" runat="server" class="table table-hover">
+                                                    <tr>
+
+                                                        <th><%= Resources.Resource.ContractFormTitle %>
+                                                        </th>
+                                                        <th><%= Resources.Resource.Installment %>
+                                                        </th>
+                                                        <th><%= "Last 3 Installments" %>
+                                                        </th>
+
+                                                        <th style="width: 125px"><%= Resources.Resource.ContractStatus %>
+                                                        </th>
+
+                                                    </tr>
+
+                                                    <tr id="itemPlaceholder" runat="server">
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </LayoutTemplate>
+                                    <ItemTemplate>
+                                        <tr valign="top">
+
+                                            <td>
+                                                <span class="text-muted"><%= Resources.Resource.Contract %>:
+                                                </span>
+                                                <asp:Literal ID="ltrlContractTitle" runat="server"></asp:Literal>
+                                            </td>
+                                            <td>
+
+                                                <span class="text-muted"><%= Resources.Resource.InstallmentDate %>:
+                                                </span>
+                                                <asp:Literal ID="ltrlInstallmentDate" runat="server"></asp:Literal>
+
+
+                                            </td>
+                                            <td>
+
+                                                <asp:Label ID="lblLast3Payments" runat="server"></asp:Label>
+
+                                            </td>
+
+                                            <td style="padding-top: 15px;">
+                                                <asp:Label ID="lblContractStatus" runat="server"></asp:Label>
+                                            </td>
+
+                                        </tr>
+
+                                    </ItemTemplate>
+                                    <EmptyDataTemplate>
+                                        <div class="alert alert-info">
+                                            <%= Resources.Resource.NoRecordMessage %>
+                                        </div>
+                                    </EmptyDataTemplate>
+                                </asp:ListView>
+
+                            </div>
                         </ItemTemplate>
                     </asp:ListView>
 
@@ -402,7 +458,7 @@
                                     <asp:Button ID="btnSaveAndNew" runat="server" Text="<% $Resources:Resource, btnSaveAndNew %>" CssClass="btn btn-primary" OnClick="btnSave_Click" ValidationGroup="followupdetails" />
 
                                     <asp:Button ID="btnSave" runat="server" Text="<% $Resources:Resource, btnSave %>" CssClass="btn btn-primary" OnClick="btnSave_Click" ValidationGroup="followupdetails" />
-                                    
+
 
                                     <asp:Button ID="btnClose" runat="server" Text="<% $Resources:Resource, btnClose %>" CssClass="btn btn-default" CausesValidation="false" data-dismiss="modal" />
 
@@ -465,41 +521,45 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            if ($("#" + Prefix + "hdnModelCustomer").val() == "") {
-                ClearCustomerMaster();
+            console.log(Prefix);
+            if ($("#" + Prefix + "hdnModelFollowup").val() == "") {
+                ClearFollowupCustomer();
             }
-            SetDialogShowHideCustomerMaster();
-            ShowHideDialogCustomerMaster();
+            SetDialogShowHideFollowupCustomer();
+            ShowHideDialogFollowupCustomer();
         });
 
-        function SetDialogShowHideCustomerMaster() {
+        function SetDialogShowHideFollowupCustomer() {
             $("#divfollowupdetails").on("hidden.bs.modal", function () {
-                ClearCustomerMaster();
+                ClearFollowupCustomer();
             })
             $("#divfollowupdetails").on("show.bs.modal", function () {
-                SetCustomerMaster();
+                SetFollowupCustomer();
             })
             $("#divfollowupdetails").on("shown.bs.modal", function () {
                 $("#" + Prefix + "txtCustomerName").focus();
 
+                //if ($("#" + Prefix + "hdnPhotoIdImageName").val() != "") {
+                //    $("." + Prefix + "fuPhotoIdImageName").attr("src", $("#" + Prefix + "hdnPhotoIdImageNameURL").val());
+                //}
             })
         }
-        function ShowHideDialogCustomerMaster() {
+        function ShowHideDialogFollowupCustomer() {
             try {
-                SetCustomerMaster();
-                if ($("#" + Prefix + "hdnModelCustomer").val() == "show") {
+                SetFollowupCustomer();
+                if ($("#" + Prefix + "hdnModelFollowup").val() == "show") {
                     $("#divfollowupdetails").modal("show");
                 }
-                else if ($("#" + Prefix + "hdnModelCustomer").val() == "hide") {
-                    ClearCustomerMaster();
+                else if ($("#" + Prefix + "hdnModelFollowup").val() == "hide") {
+                    ClearFollowupCustomer();
                     $("#divfollowupdetails").modal("hide");
                 }
-                else if ($("#" + Prefix + "hdnModelCustomer").val() == "clear") {
-                    ClearCustomerMaster();
+                else if ($("#" + Prefix + "hdnModelFollowup").val() == "clear") {
+                    ClearFollowupCustomer();
                     $("#divfollowupdetails").modal("show");
                     $("#" + Prefix + "txtCustomerName").focus();
                 }
-                $("#" + Prefix + "hdnModelCustomer").val("");
+                $("#" + Prefix + "hdnModelFollowup").val("");
                 return false;
             }
             catch (ex) {
@@ -507,21 +567,19 @@
                 return false;
             }
         }
-        function ClearCustomerMaster() {
+        function ClearFollowupCustomer() {
             for (i = 0; i < Page_Validators.length; i++) {
                 Page_Validators[i].style.display = "none";
             }
-
-
             $("#" + Prefix + "ddlAuditors").prop("selectedIndex", 0);
             $("#" + Prefix + "ddlCustomers").prop("selectedIndex", 0);
 
         }
-        function SetCustomerMaster() {
+        function SetFollowupCustomer() {
             for (i = 0; i < Page_Validators.length; i++) {
                 Page_Validators[i].errormessage = Page_Validators[i].innerHTML;
             }
-            if ($("#" + Prefix + "hdnActionCustomer").val() == "") {
+            if ($("#" + Prefix + "hdnActionFollowup").val() == "") {
                 $("#" + Prefix + "btnSaveAndNew").css("visibility", "visible");
                 $("#" + Prefix + "btnSave").val('<%= GetGlobalResourceObject("Resource", "btnSave") %>');
             }
@@ -532,5 +590,6 @@
         }
 
     </script>
+
 
 </asp:Content>

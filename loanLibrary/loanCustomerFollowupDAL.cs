@@ -23,6 +23,7 @@ namespace loanLibrary
         public DateTime? VerifiedDateTime { get; set; }
         public int? linktoUserMasterId { get; set; }
   
+        
 
         /// Extra
         public string Customer { get; set; }
@@ -50,7 +51,9 @@ namespace loanLibrary
         public DateTime? DueDateTo { get; set; }
         public int? DueInstallments { get; set; }
         public string CustomerAddress { get; set; }
-
+        public string Mobile1 { get; set; }
+        public string Mobile2 { get; set; }
+        public string Mobile3 { get; set; }
         #endregion
 
         #region Class Methods
@@ -104,10 +107,21 @@ namespace loanLibrary
                 /// Extra
                 /// 
                 objCustomerFollowup.Customer = Convert.ToString(sqlRdr["CustomerName"]);
-                //if (sqlRdr["CustomerIsRedFlag"] != DBNull.Value)
-                //{
-                //    objCustomerFollowup.CustomerIsRedFlag = Convert.ToBoolean(sqlRdr["CustomerIsRedFlag"]);
-                //}
+                objCustomerFollowup.CustomerIdNo = Convert.ToString(sqlRdr["CustomerIdNo"]);
+                if (sqlRdr["Mobile1"] != DBNull.Value)
+                {
+                    objCustomerFollowup.Mobile1 = Convert.ToString(sqlRdr["Mobile1"]);
+                }
+
+                if (sqlRdr["Mobile2"] != DBNull.Value)
+                {
+                    objCustomerFollowup.Mobile2 = Convert.ToString(sqlRdr["Mobile2"]);
+                }
+
+                if (sqlRdr["Mobile3"] != DBNull.Value)
+                {
+                    objCustomerFollowup.Mobile3 = Convert.ToString(sqlRdr["Mobile3"]);
+                }
 
                 lstCustomerFollowup.Add(objCustomerFollowup);
             }
@@ -125,7 +139,7 @@ namespace loanLibrary
             try
             {
                 SqlCon = loanObjectFactoryDAL.CreateConnection();
-                SqlCmd = new SqlCommand("loanCustomerFollowuped_SelectAll", SqlCon);
+                SqlCmd = new SqlCommand("loanCustomerFollowup_SelectAll", SqlCon);
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 if (this.CustomerFollowupId > 0)
@@ -190,24 +204,25 @@ namespace loanLibrary
         }
         #endregion
 
-        #region Update Note
-        public loanRecordStatus UpdateCustomerfollowupNotes()
+        #region  Notes
+        public loanRecordStatus InsertCustomerfollowupNotes()
         {
             SqlConnection SqlCon = null;
             SqlCommand SqlCmd = null;
             try
             {
                 SqlCon = loanObjectFactoryDAL.CreateConnection();
-                SqlCmd = new SqlCommand("loanCustomerFollowupNote_Update", SqlCon);
+                SqlCmd = new SqlCommand(" loanCustomerFollowupNote_Insert", SqlCon);
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
              
-                SqlCmd.Parameters.Add("@CustomerFollowupId", SqlDbType.Int).Value = this.CustomerFollowupId;
+                SqlCmd.Parameters.Add("@linktoCustomerFollowupId", SqlDbType.Int).Value = this.CustomerFollowupId;
+                SqlCmd.Parameters.Add("@linktoUserMasterId", SqlDbType.Int).Value = this.linktoUserMasterId;
                 SqlCmd.Parameters.Add("@Notes", SqlDbType.NVarChar).Value = this.Notes; 
                 SqlCmd.Parameters.Add("@UpdateDateTime", SqlDbType.DateTime).Value = this.UpdateDateTime;
                 SqlCmd.Parameters.Add("@SessionId", SqlDbType.VarChar).Value = this.SessionId;
                 SqlCmd.Parameters.Add("@Status", SqlDbType.SmallInt).Direction = ParameterDirection.Output;
-
+                
                 SqlCon.Open();
                 SqlCmd.ExecuteNonQuery();
                 SqlCon.Close();
@@ -227,10 +242,46 @@ namespace loanLibrary
                 loanObjectFactoryDAL.DisposeConnection(SqlCon);
             }
         }
+
+       
+
+        public loanRecordStatus UpdateCustomerfollowupNotes()
+        {
+            SqlConnection SqlCon = null;
+            SqlCommand SqlCmd = null;
+            try
+            {
+                SqlCon = loanObjectFactoryDAL.CreateConnection();
+                SqlCmd = new SqlCommand("loanCustomerFollowupNote_Update", SqlCon);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+
+                SqlCmd.Parameters.Add("@CustomerFollowupId", SqlDbType.Int).Value = this.CustomerFollowupId;
+                SqlCmd.Parameters.Add("@Notes", SqlDbType.NVarChar).Value = this.Notes;
+                SqlCmd.Parameters.Add("@UpdateDateTime", SqlDbType.DateTime).Value = this.UpdateDateTime;
+                SqlCmd.Parameters.Add("@SessionId", SqlDbType.VarChar).Value = this.SessionId;
+                SqlCmd.Parameters.Add("@Status", SqlDbType.SmallInt).Direction = ParameterDirection.Output;
+
+                SqlCon.Open();
+                SqlCmd.ExecuteNonQuery();
+                SqlCon.Close();
+
+
+                loanRecordStatus rs = (loanRecordStatus)(short)SqlCmd.Parameters["@Status"].Value;
+                return rs;
+            }
+            catch (Exception ex)
+            {
+                loanGlobalsDAL.SaveError(ex);
+                return loanRecordStatus.Error;
+            }
+            finally
+            {
+                loanObjectFactoryDAL.DisposeCommand(SqlCmd);
+                loanObjectFactoryDAL.DisposeConnection(SqlCon);
+            }
+        }
         #endregion
-
-
-
 
         #region Insert
         public loanRecordStatus InsertCustomerfollowup()
@@ -275,8 +326,7 @@ namespace loanLibrary
             }
         }
         #endregion
-
-
+         
         #region Update
         public loanRecordStatus UpdateCustomerfollowup()
         {
@@ -319,10 +369,7 @@ namespace loanLibrary
             }
         }
         #endregion
-
-
-
-
+         
         #region Delete Record
         public loanRecordStatus DeleteCustomerfollowup()
         {
@@ -360,6 +407,43 @@ namespace loanLibrary
         #endregion
 
 
+        public bool SelectFollowupCustomer()
+        {
+            SqlConnection SqlCon = null;
+            SqlCommand SqlCmd = null;
+            SqlDataReader SqlRdr = null;
+            try
+            {
+                SqlCon = loanObjectFactoryDAL.CreateConnection();
+                SqlCmd = new SqlCommand("loanCustomerFollowup_Select", SqlCon);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                if (this.CustomerFollowupId > 0)
+                {
+                    SqlCmd.Parameters.Add("@CustomerFollowupId", SqlDbType.Int).Value = this.CustomerFollowupId;
+                }
+                 
+
+                SqlCon.Open();
+                SqlRdr = SqlCmd.ExecuteReader();
+                bool IsSelected = SetClassPropertiesFromSqlDataReader(SqlRdr);
+                SqlRdr.Close();
+                SqlCon.Close();
+
+                return IsSelected;
+            }
+            catch (Exception ex)
+            {
+                loanGlobalsDAL.SaveError(ex);
+                return false;
+            }
+            finally
+            {
+                loanObjectFactoryDAL.DisposeDataReader(SqlRdr);
+                loanObjectFactoryDAL.DisposeCommand(SqlCmd);
+                loanObjectFactoryDAL.DisposeConnection(SqlCon);
+            }
+        }
 
 
     }
