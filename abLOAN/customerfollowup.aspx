@@ -34,7 +34,10 @@
                             <div style="padding: 0 15px;">
                                 <asp:Button ID="btnDownload" runat="server" Text="<% $Resources:Resource, Download %>" CssClass="btn btn-info" OnClick="btnDownload_Click" />
                                 &nbsp;
-                                <asp:Button ID="btnNew" runat="server" Text="<% $Resources:Resource, btnNew %>" CssClass="btn btn-primary" data-toggle="modal" data-target="#divfollowupdetails" OnClientClick="javascript:return false;" />
+                                <asp:Button ID="btnNew" runat="server" Text="<% $Resources:Resource, btnNew %>" 
+                                    CssClass="btn btn-primary" data-toggle="modal" data-target="#divfollowupdetails" 
+                                    OnClientClick="javascript:return false;"
+                                    />
                                 &nbsp;
                             </div>
                         </div>
@@ -135,7 +138,8 @@
                         </div>
                     </div>
 
-                    <asp:ListView ID="lvCustomerFollowedup" DataKeyNames="CustomerFollowupId"
+                    <asp:ListView ID="lvCustomerFollowedup" 
+                        DataKeyNames="CustomerFollowupId"
                         OnItemCommand="lvCustomerFollowedup_ItemCommand"
                         OnItemDataBound="lvCustomerFollowedup_ItemDataBound" runat="server">
                         <ItemTemplate>
@@ -176,8 +180,18 @@
                                     <div class="col-md-4">
                                         <div>
 
-                                            <asp:LinkButton ID="lbtnEdit" runat="server" CommandName="EditRecord" CssClass="btn btn-primary btn-sm fa fa-edit" title="Edit"></asp:LinkButton>
-                                            <asp:LinkButton ID="lbtnDelete" runat="server" CommandName="DeleteRecord" OnClientClick="javascript:return ConfirmDelete(this);" CssClass="btn btn-danger btn-sm fa fa-trash" title="Delete"></asp:LinkButton>
+                                           
+
+                                             <asp:LinkButton ID="lbtnEdit" 
+                                                 runat="server" CommandName="EditRecord"
+                                                 CssClass="btn btn-primary btn-sm fa fa-edit"  
+                                                 title="Edit"></asp:LinkButton>
+
+                                            <asp:LinkButton ID="lbtnDelete" runat="server" 
+                                                CommandName="DeleteRecord" 
+                                                OnClientClick="javascript:return ConfirmDelete(this);" 
+                                                CssClass="btn btn-danger btn-sm fa fa-trash" 
+                                                title="Delete"></asp:LinkButton>
                                         </div>
 
 
@@ -208,74 +222,84 @@
 
                             </div>
 
-                            <div class="card-container">
-                                <asp:ListView ID="lvFollowupNote" runat="server"
-                                    DataKeyNames="FollowupNoteId"
-                                    DataSource='<%# getFollowUpNoteDataSource(Eval("CustomerFollowupId"))  %>'
-                                    OnItemCommand="pgrFollowupNote_ItemCommand"
-                                    OnItemDataBound="lvFollowupNote_ItemDataBound">
+                            <div class="card-container"> 
+                                <p> 
+                                    <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                        data-target='<%# "#collapseExample" + Container.DataItemIndex %>' aria-expanded="false"
+                                        aria-controls='<%# "collapseExample" + Container.DataItemIndex %>'>
+                                        Show Note
+                                    </button>
+                                </p>
+                                <div class="collapse" id='<%# "collapseExample" + Container.DataItemIndex %>'>
+                                    <div class="card card-body"> 
+                                        <asp:ListView ID="lvFollowupNote" runat="server"
+                                            DataKeyNames="FollowupNoteId"
+                                            DataSource='<%# getFollowUpNoteDataSource(Eval("CustomerFollowupId"))  %>'
+                                            OnItemCommand="pgrFollowupNote_ItemCommand"
+                                            OnItemDataBound="lvFollowupNote_ItemDataBound">
 
-                                    <LayoutTemplate>
-                                        <div class="panel panel-default">
-                                            <div class="table-responsive">
-                                                <table id="itemPlaceholderContainer" runat="server" class="table table-hover">
-                                                    <tr>
+                                            <LayoutTemplate>
+                                                <div class="panel panel-default">
+                                                    <div class="table-responsive">
+                                                        <table id="itemPlaceholderContainer" runat="server" class="table table-hover">
+                                                            <tr>
 
-                                                        <th>ID
-                                                        </th>
+                                                                <th>ID
+                                                                </th>
 
-                                                        <th>Note
-                                                        </th>
-                                                        <th>Username
-                                                        </th>
-
-
-                                                        <th style="width: 125px">Datetime
-                                                        </th>
-
-                                                    </tr>
-
-                                                    <tr id="itemPlaceholder" runat="server">
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </LayoutTemplate>
-                                    <ItemTemplate>
-                                        <tr valign="top">
-
-                                            <td>
-
-                                                <asp:Literal ID="ltrlFollowupNoteId" runat="server"></asp:Literal>
-                                            </td>
-                                            <td>
-
-                                                <asp:Literal ID="ltrlNote" runat="server"></asp:Literal>
-                                            </td>
-                                            <td>
-
-                                                <asp:Literal ID="ltrlUsername" runat="server"></asp:Literal>
+                                                                <th>Note
+                                                                </th>
+                                                                <th>Username
+                                                                </th>
 
 
-                                            </td>
-                                            <td>
+                                                                <th style="width: 125px">Datetime
+                                                                </th>
 
-                                                <asp:Label ID="ltrlCreateDate" runat="server"></asp:Label>
+                                                            </tr>
 
-                                            </td>
+                                                            <tr id="itemPlaceholder" runat="server">
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </LayoutTemplate>
+                                            <ItemTemplate>
+                                                <tr valign="top">
 
-                                            <td style="padding-top: 15px;"></td>
+                                                    <td>
 
-                                        </tr>
+                                                        <asp:Literal ID="ltrlFollowupNoteId" runat="server"></asp:Literal>
+                                                    </td>
+                                                    <td>
 
-                                    </ItemTemplate>
-                                    <EmptyDataTemplate>
-                                        <div class="alert alert-info">
-                                            <%= Resources.Resource.NoRecordMessage %>
-                                        </div>
-                                    </EmptyDataTemplate>
-                                </asp:ListView>
+                                                        <asp:Literal ID="ltrlNote" runat="server"></asp:Literal>
+                                                    </td>
+                                                    <td>
 
+                                                        <asp:Literal ID="ltrlUsername" runat="server"></asp:Literal>
+
+
+                                                    </td>
+                                                    <td>
+
+                                                        <asp:Label ID="ltrlCreateDate" runat="server"></asp:Label>
+
+                                                    </td>
+
+                                                    <td style="padding-top: 15px;"></td>
+
+                                                </tr>
+
+                                            </ItemTemplate>
+                                            <EmptyDataTemplate>
+                                                <div class="alert alert-info">
+                                                    <%= Resources.Resource.NoRecordMessage %>
+                                                </div>
+                                            </EmptyDataTemplate>
+                                        </asp:ListView> 
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="card-container">
@@ -519,77 +543,133 @@
     </script>
 
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            console.log(Prefix);
-            if ($("#" + Prefix + "hdnModelFollowup").val() == "") {
-                ClearFollowupCustomer();
-            }
-            SetDialogShowHideFollowupCustomer();
-            ShowHideDialogFollowupCustomer();
-        });
+   
 
-        function SetDialogShowHideFollowupCustomer() {
-            $("#divfollowupdetails").on("hidden.bs.modal", function () {
-                ClearFollowupCustomer();
-            })
-            $("#divfollowupdetails").on("show.bs.modal", function () {
-                SetFollowupCustomer();
-            })
-            $("#divfollowupdetails").on("shown.bs.modal", function () {
-                $("#" + Prefix + "txtCustomerName").focus();
 
-                //if ($("#" + Prefix + "hdnPhotoIdImageName").val() != "") {
-                //    $("." + Prefix + "fuPhotoIdImageName").attr("src", $("#" + Prefix + "hdnPhotoIdImageNameURL").val());
-                //}
-            })
-        }
-        function ShowHideDialogFollowupCustomer() {
-            try {
-                SetFollowupCustomer();
-                if ($("#" + Prefix + "hdnModelFollowup").val() == "show") {
-                    $("#divfollowupdetails").modal("show");
-                }
-                else if ($("#" + Prefix + "hdnModelFollowup").val() == "hide") {
-                    ClearFollowupCustomer();
-                    $("#divfollowupdetails").modal("hide");
-                }
-                else if ($("#" + Prefix + "hdnModelFollowup").val() == "clear") {
-                    ClearFollowupCustomer();
-                    $("#divfollowupdetails").modal("show");
-                    $("#" + Prefix + "txtCustomerName").focus();
-                }
-                $("#" + Prefix + "hdnModelFollowup").val("");
-                return false;
-            }
-            catch (ex) {
-                alert(ex);
-                return false;
-            }
-        }
-        function ClearFollowupCustomer() {
-            for (i = 0; i < Page_Validators.length; i++) {
-                Page_Validators[i].style.display = "none";
-            }
-            $("#" + Prefix + "ddlAuditors").prop("selectedIndex", 0);
-            $("#" + Prefix + "ddlCustomers").prop("selectedIndex", 0);
+     <script type="text/javascript">
+         $(document).ready(function () {
+             if ($("#" + Prefix + "hdnModelFollowup").val() == "") {
+                 ClearCustomerPaymentMaster();
+             }
+             SetDialogShowHideCustomerPaymentMaster();
+             ShowHideDialogCustomerPaymentMaster();
+         });
 
-        }
-        function SetFollowupCustomer() {
-            for (i = 0; i < Page_Validators.length; i++) {
-                Page_Validators[i].errormessage = Page_Validators[i].innerHTML;
-            }
-            if ($("#" + Prefix + "hdnActionFollowup").val() == "") {
-                $("#" + Prefix + "btnSaveAndNew").css("visibility", "visible");
-                $("#" + Prefix + "btnSave").val('<%= GetGlobalResourceObject("Resource", "btnSave") %>');
-            }
-            else {
-                $("#" + Prefix + "btnSaveAndNew").css("visibility", "hidden");
-                $("#" + Prefix + "btnSave").val('<%= GetGlobalResourceObject("Resource", "btnUpdate") %>');
-            }
-        }
+         function SetDialogShowHideCustomerPaymentMaster() {
+             $("#divfollowupdetails").on("hidden.bs.modal", function () {
+                 ClearCustomerPaymentMaster();
+                 $("#" + Prefix + "btnClearList").click();
+             })
+             $("#divfollowupdetails").on("show.bs.modal", function () {
+                 SetCustomerPaymentMaster();
+             })
+             $("#divfollowupdetails").on("shown.bs.modal", function () {
+                 $("#" + Prefix + "txtSearchCustomerIdNo").focus();
+             })
+         }
+         function ShowHideDialogCustomerPaymentMaster() {
+             try {
+                 SetCustomerPaymentMaster();
+                 if ($("#" + Prefix + "hdnModelFollowup").val() == "show") {
+                     $("#divfollowupdetails").modal("show");
+                 }
+                 else if ($("#" + Prefix + "hdnModelFollowup").val() == "hide") {
+                     ClearCustomerPaymentMaster();
+                     $("#divfollowupdetails").modal("hide");
+                 }
+                 else if ($("#" + Prefix + "hdnModelFollowup").val() == "clear") {
+                     ClearCustomerPaymentMaster();
+                     $("#divfollowupdetails").modal("show");
+                     $("#" + Prefix + "txtSearchCustomerIdNo").focus();
+                 }
+                 $("#" + Prefix + "hdnModelFollowup").val("");
+                 return false;
+             }
+             catch (ex) {
+                 alert(ex);
+                 return false;
+             }
+         }
+         function ClearCustomerPaymentMaster() {
+             for (i = 0; i < Page_Validators.length; i++) {
+                 Page_Validators[i].style.display = "none";
+             }
 
-    </script>
+
+
+         }
+         function SetCustomerPaymentMaster() {
+             for (i = 0; i < Page_Validators.length; i++) {
+                 Page_Validators[i].errormessage = Page_Validators[i].innerHTML;
+             }
+             if ($("#" + Prefix + "hdnModelFollowup").val() == "") {
+                 $("#" + Prefix + "btnSaveAndNew").css("visibility", "visible");
+                 $("#" + Prefix + "btnSave").val('<%= GetGlobalResourceObject("Resource", "btnSave") %>');
+         }
+         else {
+             $("#" + Prefix + "btnSaveAndNew").css("visibility", "hidden");
+             $("#" + Prefix + "btnSave").val('<%= GetGlobalResourceObject("Resource", "btnUpdate") %>');
+             }
+             Validations();
+         }
+         function Validations() {
+             var SelectedPaymentType = $("#" + Prefix + "ddlPaymentType").val();
+             $("#dvBank").css("display", "none");
+             $("#dvOthers").css("display", "none");
+             $("#dvBankAccountNumber").css("display", "none");
+             if (SelectedPaymentType == 2)    //for Bank
+             {
+                 $("#dvBank").css("display", "block");
+                 $("#dvOthers").css("display", "none");
+                 $("#dvBankAccountNumber").css("display", "block");
+             }
+             else if (SelectedPaymentType > 2)   // for other types
+             {
+                 $("#dvOthers").css("display", "block");
+                 $("#dvBank").css("display", "none");
+                 $("#dvBankAccountNumber").css("display", "block");
+             }
+         }
+         function Calculate() {
+             var txtList = $('.chkAmountAdd');
+             var TotalAdditions = 0;
+             for (var i = 0; i < txtList.length; i++) {
+                 var chk = txtList[i].id.replace("txtLvAmount", "chkSelect");
+                 if ($("#" + chk).prop("checked") == true) {
+                     if (isNaN(parseFloat(txtList[i].value)) == false) {
+                         TotalAdditions += parseFloat(txtList[i].value);
+                     }
+                 }
+             }
+             $(".TotalAdditions").val(TotalAdditions.toFixed(0));
+         }
+
+         function SearchCustomer() {
+             $("#" + Prefix + "txtSearchCustomerIdNo").autocomplete({
+                 source: function (request, response) {
+                     $.ajax({
+                         type: "POST",
+                         contentType: "application/json; charset=utf-8",
+                         url: "contractdetails.aspx/GetCustomerMaster",
+                         data: "{'customer':'" + $("#" + Prefix + "txtSearchCustomerIdNo").val() + "'}",
+                         dataType: "json",
+                         success: function (data) {
+                             response($.map(data.d, function (item) {
+                                 return {
+                                     value: item.CustomerName + " (" + item.IdNo + ")"
+                                 }
+                             }))
+                         },
+                     });
+                 },
+                 minLength: 3,
+                 select: function (event, ui) {
+                     $("#" + Prefix + "txtSearchCustomerIdNo").val(ui.item.value);
+                     $("#" + Prefix + "btnSearchCustomerIdNo").click();
+                 },
+             });
+         }
+     </script>
 
 
 </asp:Content>

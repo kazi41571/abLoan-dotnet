@@ -26,15 +26,13 @@ namespace abLOAN
 
                 if (!Page.IsPostBack)
                 {
-                    
 
-                    //loanUser.CheckUserRights(loanUserRights.ViewContract);
                     loanUser.CheckRoleRights(loanRoleRights.ViewList);
 
                     GetContractStatus();
                     GetPageDefaults();
-                  
-                    GetAuditors(); 
+
+                    GetAuditors();
                     loanSessionsDAL.RemoveSessionAllKeyValue();
 
                     ddlSortBy.Items.Add(new System.Web.UI.WebControls.ListItem(Resources.Resource.Customer + " " + Resources.Resource.ASC, "Customer,ASC"));
@@ -44,18 +42,14 @@ namespace abLOAN
                     ddlSortBy.Items.Add(new System.Web.UI.WebControls.ListItem(Resources.Resource.CreateDate + " " + Resources.Resource.ASC, "CreateDate,ASC"));
                     ddlSortBy.Items.Add(new System.Web.UI.WebControls.ListItem(Resources.Resource.CreateDate + " " + Resources.Resource.DESC, "CreateDate,DESC"));
 
-                    if (Request.QueryString.ToString().Contains("id="))
-                    {
-                        int id = Convert.ToInt32(Request.QueryString["id"].ToString());
-                        GetFollowdupCustomer(id);
-                    }
-                    FillFollowdupCustomerMaster(); 
-                   
+
+                    FillFollowdupCustomerMaster();
+
                 }
             }
             catch (Exception ex)
             {
-                 
+
                 loanAppGlobals.SaveError(ex);
             }
         }
@@ -78,11 +72,11 @@ namespace abLOAN
         {
             try
             {
-                txtFilterCustomer.Text = string.Empty; 
+                txtFilterCustomer.Text = string.Empty;
                 txtFilterContractDate.Text = loanGlobalsDAL.ConvertDateTimeToString(new DateTime(2000, 01, 01), loanAppGlobals.DateFormat);
                 txtFilterContractDateTo.Text = loanGlobalsDAL.ConvertDateTimeToString(loanGlobalsDAL.GetCurrentDateTime().AddYears(1), loanAppGlobals.DateFormat);
                 ddlFilterContractStatus.SelectedValue = loanContractStatus.Active.GetHashCode().ToString();
-             
+
                 ddlSortBy.SelectedValue = string.Empty;
 
                 pgrFollowupMaster.CurrentPage = 1;
@@ -103,7 +97,7 @@ namespace abLOAN
                 IdNo = IdNo.Substring(IdNo.IndexOf("(") + 1, IdNo.IndexOf(")") - IdNo.IndexOf("(") - 1);
             }
             objContractMasterDAL.Customer = IdNo;
-            
+
             DateTime? ContractDateFrom = null;
             if (!string.IsNullOrEmpty(txtFilterContractDate.Text))
             {
@@ -121,12 +115,12 @@ namespace abLOAN
                 objContractMasterDAL.linktoContractStatusMasterId = Convert.ToInt32(ddlFilterContractStatus.SelectedValue);
             }
             objContractMasterDAL.linktoCompanyMasterId = ((loanUser)Session[loanSessionsDAL.UserSession]).CompanyMasterId;
-          
-       
-           
-          
-           
-         
+
+
+
+
+
+
             string OrderBy = null;
             string OrderDir = null;
             if (ddlSortBy.SelectedValue != string.Empty)
@@ -176,82 +170,38 @@ namespace abLOAN
             int id = int.Parse(lblCustomerFollowupId.Value);
 
 
-            try{ 
-            loanFollowupNoteDAL objFollowupNoteDAL = new loanFollowupNoteDAL();
+            try
+            {
+                loanFollowupNoteDAL objFollowupNoteDAL = new loanFollowupNoteDAL();
                 objFollowupNoteDAL.linktoCustomerFollowupId = id;
                 objFollowupNoteDAL.linktoUserMasterId = ((loanUser)Session[loanSessionsDAL.UserSession]).UserMasterId;
-                objFollowupNoteDAL.Notes = notes ;
+                objFollowupNoteDAL.Notes = notes;
                 objFollowupNoteDAL.UpdateDateTime = loanGlobalsDAL.GetCurrentDateTime();
                 objFollowupNoteDAL.SessionId = ((loanUser)Session[loanSessionsDAL.UserSession]).SessionId;
 
-                var rsStatus= objFollowupNoteDAL.InsertCustomerfollowupNotes();
+                var rsStatus = objFollowupNoteDAL.InsertCustomerfollowupNotes();
 
                 if (rsStatus == loanRecordStatus.Error)
                 {
                     loanAppGlobals.ShowMessage(loanMessagesDAL.UpdateFail, loanMessageIcon.Error);
                     return;
                 }
-                else if  (rsStatus == loanRecordStatus.Success)
+                else if (rsStatus == loanRecordStatus.Success)
                 {
-                    loanAppGlobals.ShowMessage(loanMessagesDAL.UpdateSuccess, loanMessageIcon.Success); 
-                    
-                    
-                }
-              
+                    loanAppGlobals.ShowMessage(loanMessagesDAL.UpdateSuccess, loanMessageIcon.Success);
 
-        }
+
+                }
+
+
+            }
             catch (Exception ex)
             {
                 loanAppGlobals.SaveError(ex);
             }
 
-}
+        }
 
-
-        //protected void deleteCustomerRecordBtn_Click(object sender, EventArgs e)
-        //{
-        //    // Get the reference to the button that was clicked
-        //    Button btnSubmit = (Button)sender;
-
-        //    // Find the form associated with the button
-        //    Control container = btnSubmit.NamingContainer;
-
-        //    // Find the TextBox within the form
-
-        //    HiddenField lblCustomerFollowupId = (HiddenField)container.FindControl("lblCustomerFollowupId");
-        //    // Access the value of the TextBox
-
-        //    int id = int.Parse(lblCustomerFollowupId.Value);
-
-
-        //    try
-        //    {
-        //        loanCustomerFollowupDAL objCustomerFollowupDAL = new loanCustomerFollowupDAL();
-        //        objCustomerFollowupDAL.CustomerFollowupId = id;
-        //        var rsStatus = objCustomerFollowupDAL.DeleteCustomerfollowup();
-
-        //        if (rsStatus == loanRecordStatus.Error)
-        //        {
-        //            loanAppGlobals.ShowMessage(loanMessagesDAL.DeleteFail, loanMessageIcon.Error);
-        //            return;
-        //        }
-        //        else if (rsStatus == loanRecordStatus.Success)
-        //        {
-        //            loanAppGlobals.ShowMessage(loanMessagesDAL.DeleteSuccess, loanMessageIcon.Success);
-        //
-        //          FillFollowdupCustomerMaster();
-        //          FillContractMaster();
-        //      
-        //        }
-
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        loanAppGlobals.SaveError(ex);
-        //    }
-
-        //}
         protected void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -299,6 +249,7 @@ namespace abLOAN
                         }
                         FillFollowdupCustomerMaster();
                         FillContractMaster();
+                        lvCustomerFollowedup.DataBind();
                     }
                 }
                 else
@@ -325,6 +276,8 @@ namespace abLOAN
                         hdnModelFollowup.Value = "hide";
                         FillFollowdupCustomerMaster();
                         FillContractMaster();
+                        lvCustomerFollowedup.DataBind();
+
                     }
                 }
             }
@@ -337,16 +290,16 @@ namespace abLOAN
         #region List Methods
 
 
-        
 
-             protected void lvCustomerFollowedup_ItemCommand(object sender, ListViewCommandEventArgs e)
+
+        protected void lvCustomerFollowedup_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             try
             {
                 if (e.CommandName.Equals("EditRecord", StringComparison.CurrentCultureIgnoreCase))
                 {
                     GetFollowdupCustomer(Convert.ToInt32(((ListView)sender).DataKeys[e.Item.DataItemIndex].Value));
-                    
+
                 }
                 else if (e.CommandName.Equals("VerifyRecord", StringComparison.CurrentCultureIgnoreCase))
                 {
@@ -385,7 +338,7 @@ namespace abLOAN
             {
                 if (e.CommandName.Equals("EditRecord", StringComparison.CurrentCultureIgnoreCase))
                 {
-                  //  FillContractMaster(Convert.ToInt32(((ListView)sender).DataKeys[e.Item.DataItemIndex].Value));
+                    //  FillContractMaster(Convert.ToInt32(((ListView)sender).DataKeys[e.Item.DataItemIndex].Value));
                 }
                 else if (e.CommandName.Equals("VerifyRecord", StringComparison.CurrentCultureIgnoreCase))
                 {
@@ -416,19 +369,16 @@ namespace abLOAN
             {
                 loanAppGlobals.SaveError(ex);
             }
-        }
-
-
-
+        } 
         protected void lvContractMaster_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
             try
             {
                 if (e.Item.ItemType == ListViewItemType.DataItem)
                 {
-                  
 
-                   loanContractMasterDAL objContractMasterDAL = (loanContractMasterDAL)e.Item.DataItem;
+
+                    loanContractMasterDAL objContractMasterDAL = (loanContractMasterDAL)e.Item.DataItem;
 
                     Literal ltrlCustomer = (Literal)e.Item.FindControl("ltrlCustomer");
                     HyperLink hlnkCustomer = (HyperLink)e.Item.FindControl("hlnkCustomer");
@@ -461,7 +411,7 @@ namespace abLOAN
                     HyperLink lnkLinks = (HyperLink)e.Item.FindControl("lnkLinks");
                     HyperLink lnkCustomerLinks = (HyperLink)e.Item.FindControl("lnkCustomerLinks");
                     Label lblContractStatus = (Label)e.Item.FindControl("lblContractStatus");
-                    Label lblLast3Payments = (Label)e.Item.FindControl("lblLast3Payments"); 
+                    Label lblLast3Payments = (Label)e.Item.FindControl("lblLast3Payments");
                     //Literal ltrlModifiedBy = (Literal)e.Item.FindControl("ltrlModifiedBy");
                     //ltrlModifiedBy.Text = objContractMasterDAL.ModifiedBy;
                     //Literal ltrlModifiedDateTime = (Literal)e.Item.FindControl("ltrlModifiedDateTime");
@@ -479,7 +429,7 @@ namespace abLOAN
                     }
                     else
                     {
-                        
+
                         //ltrlCustomer.Text = objContractMasterDAL.Customer;
                         //hlnkCustomer.Text = objContractMasterDAL.Customer;
                     }
@@ -497,7 +447,7 @@ namespace abLOAN
                     //ltrlBankAccountNumber2.Text = objContractMasterDAL.BankAccountNumber2;
                     //ltrlBankAccountNumber3.Text = objContractMasterDAL.BankAccountNumber3;
                     //ltrlBankAccountNumber4.Text = objContractMasterDAL.BankAccountNumber4;
-                     ltrlContractTitle.Text = objContractMasterDAL.ContractTitle;
+                    ltrlContractTitle.Text = objContractMasterDAL.ContractTitle;
                     //hlnkContractTitle.Text = objContractMasterDAL.ContractTitle;
                     //if (objContractMasterDAL.Links != "")
                     //{
@@ -535,10 +485,10 @@ namespace abLOAN
                     //    lblDueAmount.CssClass = "text-success";
                     //}
 
-                    lblLast3Payments.Text = objContractMasterDAL.Last3Installments .ToString();
-                   
+                    lblLast3Payments.Text = objContractMasterDAL.Last3Installments.ToString();
 
-                  //  ltrlDownPayment.Text = objContractMasterDAL.DownPayment.ToString("0.00");
+
+                    //  ltrlDownPayment.Text = objContractMasterDAL.DownPayment.ToString("0.00");
                     //lblSettlementAmount.Text = objContractMasterDAL.SettlementAmount.ToString("0.00");
                     //if (Convert.ToDecimal(lblSettlementAmount.Text) > 0)
                     //{
@@ -626,18 +576,17 @@ namespace abLOAN
             {
                 loanAppGlobals.SaveError(ex);
             }
-        }
-
+        } 
         protected void lvFollowupNote_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
             try
             {
                 if (e.Item.ItemType == ListViewItemType.DataItem)
                 {
-                   
-                   loanFollowupNoteDAL objFollowupNoteDAL = (loanFollowupNoteDAL)e.Item.DataItem;
-                     
-                    Literal ltrlFollowupNoteId = (Literal)e.Item.FindControl("ltrlFollowupNoteId"); 
+
+                    loanFollowupNoteDAL objFollowupNoteDAL = (loanFollowupNoteDAL)e.Item.DataItem;
+
+                    Literal ltrlFollowupNoteId = (Literal)e.Item.FindControl("ltrlFollowupNoteId");
                     ltrlFollowupNoteId.Text = objFollowupNoteDAL.FollowupNoteId.ToString();
 
                     Literal ltrlNote = (Literal)e.Item.FindControl("ltrlNote");
@@ -650,10 +599,10 @@ namespace abLOAN
                     ltrlUsername.Text = objFollowupNoteDAL.Username.ToString();
 
                     Label lblCreateDate = (Label)e.Item.FindControl("ltrlCreateDate");
-                    var d= loanGlobalsDAL.ConvertDateTimeToString(objFollowupNoteDAL.CreateDateTime, loanAppGlobals.DateFormat);
-                    lblCreateDate.Text = d; 
-                  
-                  
+                    var d = loanGlobalsDAL.ConvertDateTimeToString(objFollowupNoteDAL.CreateDateTime, loanAppGlobals.DateFormat);
+                    lblCreateDate.Text = d;
+
+
 
 
                 }
@@ -662,8 +611,7 @@ namespace abLOAN
             {
                 loanAppGlobals.SaveError(ex);
             }
-        }
-
+        } 
         protected void pgrFollowupMaster_ItemCommand(object sender, EventArgs e)
         {
             try
@@ -694,9 +642,8 @@ namespace abLOAN
             try
             {
                 if (e.CommandName.Equals("EditRecord", StringComparison.CurrentCultureIgnoreCase))
-                {
-                    loanSessionsDAL.SetSessionKeyValue("ContractMasterId", ((ListView)sender).DataKeys[e.Item.DataItemIndex].Value);
-                    Response.Redirect("contractdetails.aspx");
+                { 
+                    GetFollowdupCustomer(Convert.ToInt32(((ListView)sender).DataKeys[e.Item.DataItemIndex].Value)); 
                 }
                 else if (e.CommandName.Equals("VerifyRecord", StringComparison.CurrentCultureIgnoreCase))
                 {
@@ -727,9 +674,7 @@ namespace abLOAN
             {
                 loanAppGlobals.SaveError(ex);
             }
-        }
-
-
+        } 
         protected void lvCustomerFollowedup_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
             try
@@ -738,8 +683,8 @@ namespace abLOAN
                 {
                     loanCustomerFollowupDAL objCustomerFollowupDAL = (loanCustomerFollowupDAL)e.Item.DataItem;
 
-                   
-                    Label lblCustomer = (Label) e.Item.FindControl("lblCustomer");
+
+                    Label lblCustomer = (Label)e.Item.FindControl("lblCustomer");
                     lblCustomer.Text = objCustomerFollowupDAL.Customer;
 
 
@@ -748,7 +693,7 @@ namespace abLOAN
                     lblCustomerIdNo.Text = objCustomerFollowupDAL.CustomerIdNo.ToString();
 
                     Label lblMobile1 = (Label)e.Item.FindControl("lblMobile1");
-                    lblMobile1.Text = objCustomerFollowupDAL.Mobile1?? objCustomerFollowupDAL.Mobile2;
+                    lblMobile1.Text = objCustomerFollowupDAL.Mobile1 ?? objCustomerFollowupDAL.Mobile2;
 
                     Label lblMobile2 = (Label)e.Item.FindControl("lblMobile2");
                     lblMobile2.Text = objCustomerFollowupDAL.Mobile2 ?? objCustomerFollowupDAL.Mobile2;
@@ -759,15 +704,16 @@ namespace abLOAN
                     HiddenField lblCustomerFollowupId = (HiddenField)e.Item.FindControl("lblCustomerFollowupId");
                     lblCustomerFollowupId.Value = objCustomerFollowupDAL.CustomerFollowupId.ToString();
 
-                  
+
 
                 }
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
 
 
             }
-       }
+        }
         public Dictionary<int, List<loanContractMasterDAL>> contracts = new Dictionary<int, List<loanContractMasterDAL>>();
         public List<loanContractMasterDAL> getContractDataSource(object idObj)
         {
@@ -781,23 +727,18 @@ namespace abLOAN
             contracts.TryGetValue(id, out data);
 
             return data;
-        }
-
-
+        } 
         public List<loanFollowupNoteDAL> getFollowUpNoteDataSource(object idObj)
         {
             loanFollowupNoteDAL objFollowupNoteDAL = new loanFollowupNoteDAL();
             int TotalRecords;
-            objFollowupNoteDAL.linktoCustomerFollowupId = Convert.ToInt32(idObj);  
-            List<loanFollowupNoteDAL> lstFollowupNote = 
+            objFollowupNoteDAL.linktoCustomerFollowupId = Convert.ToInt32(idObj);
+            List<loanFollowupNoteDAL> lstFollowupNote =
                 objFollowupNoteDAL.SelectFollowupNote(out TotalRecords);
-
-          
+             
             return lstFollowupNote;
         }
         #endregion
-
-
 
         #region Private Methods
         private void GetPageDefaults()
@@ -814,18 +755,20 @@ namespace abLOAN
             {
                 loanContractMasterDAL objContractMasterDAL = (loanContractMasterDAL)loanSessionsDAL.GetSessionKeyValue("FilterContract");
                 txtFilterCustomer.Text = objContractMasterDAL.Customer;
-               
-          
+
+
                 ddlFilterContractStatus.SelectedValue = objContractMasterDAL.linktoContractStatusMasterId.ToString();
-                
+
             }
         }
 
-
-
-        private void GetFollowdupCustomer (int FollowupCustomerId)
+        private void GetFollowdupCustomer(int FollowupCustomerId)
         {
-            loanUser.CheckRoleRights(loanRoleRights.ViewRecord);
+            loanUser.CheckRoleRights(loanRoleRights.ViewRecord); 
+            hdnModelFollowup.Value = "show";
+            hdnActionFollowup.Value = "edit";
+
+           
 
             loanCustomerFollowupDAL objCustomerFollowupDAL = new loanCustomerFollowupDAL();
             objCustomerFollowupDAL.CustomerFollowupId = FollowupCustomerId;
@@ -837,14 +780,12 @@ namespace abLOAN
             hdnCustomerMasterId.Value = objCustomerFollowupDAL.linktoCustomerMasterId.ToString();
             txtCustomerName.Text = objCustomerFollowupDAL.Customer;
             txtIdNo.Text = objCustomerFollowupDAL.CustomerIdNo;
-             
+            txtSearchCustomerIdNo.Text = objCustomerFollowupDAL.CustomerIdNo; 
 
 
-            hdnModelFollowup.Value = "show";
-            hdnActionFollowup.Value = "edit";
+            ddlAuditors.SelectedItem.Value = objCustomerFollowupDAL.linktoUserMasterId.ToString();
+            
         }
-
-
 
         private void FillFollowdupCustomerMaster()
         {
@@ -859,19 +800,19 @@ namespace abLOAN
 
             if (!canCollectContracts())
             {
-                objCustomerFollowup.linktoUserMasterId = ((loanUser)HttpContext.Current.Session[loanSessionsDAL.UserSession]).UserMasterId     ;
+                objCustomerFollowup.linktoUserMasterId = ((loanUser)HttpContext.Current.Session[loanSessionsDAL.UserSession]).UserMasterId;
             }
 
-            
+
 
             int TotalRecords;
             List<loanCustomerFollowupDAL> lstCustomerFollowup = objCustomerFollowup.SelectAllCustomerFollowupsPageWise
-                (pgrFollowupMaster.StartRowIndex, pgrFollowupMaster.PageSize, 
-                out TotalRecords,   orderBy: OrderBy, orderDir: OrderDir)  ;
+                (pgrFollowupMaster.StartRowIndex, pgrFollowupMaster.PageSize,
+                out TotalRecords, orderBy: OrderBy, orderDir: OrderDir);
 
             pgrFollowupMaster.TotalRowCount = TotalRecords;
-           
-            lvCustomerFollowedup.DataSource= lstCustomerFollowup;
+
+            lvCustomerFollowedup.DataSource = lstCustomerFollowup;
             lvCustomerFollowedup.DataBind();
 
 
@@ -922,9 +863,9 @@ namespace abLOAN
                 IdNo = IdNo.Substring(IdNo.IndexOf("(") + 1, IdNo.IndexOf(")") - IdNo.IndexOf("(") - 1);
             }
             objContractMasterDAL.Customer = IdNo;
-      
-           
-            
+
+
+
             DateTime? ContractDateFrom = null;
             if (!string.IsNullOrEmpty(txtFilterContractDate.Text))
             {
@@ -942,11 +883,11 @@ namespace abLOAN
                 objContractMasterDAL.linktoContractStatusMasterId = Convert.ToInt32(ddlFilterContractStatus.SelectedValue);
             }
             objContractMasterDAL.linktoCompanyMasterId = ((loanUser)Session[loanSessionsDAL.UserSession]).CompanyMasterId;
-            
-            
 
 
-          
+
+
+
 
 
             loanSessionsDAL.SetSessionKeyValue("FilterContract", objContractMasterDAL);
@@ -965,7 +906,7 @@ namespace abLOAN
                 (0, 100, out TotalRecords, ContractDateFrom, ContractDateTo, orderBy: OrderBy, orderDir: OrderDir);
 
 
-         
+
 
             var groupedContracts = lstContractMaster.GroupBy(contract => contract.linktoCustomerMasterId)
                                        .ToDictionary(group => group.Key, group => group.ToList());
@@ -974,7 +915,7 @@ namespace abLOAN
             contracts = new Dictionary<int, List<loanContractMasterDAL>>(groupedContracts);
 
 
-           
+
 
             //pgrContractMaster.TotalRowCount = TotalRecords;
 
@@ -1014,7 +955,7 @@ namespace abLOAN
 
             //  lvContractMaster.DataSource = contracts;
             //  lvContractMaster.DataBind = contracts;
-            
+
 
         }
 
@@ -1039,8 +980,6 @@ namespace abLOAN
             }
         }
 
-      
-
 
         private void GetAuditors()
         {
@@ -1059,44 +998,27 @@ namespace abLOAN
             }
         }
 
-
-        //private void GetCustomers()
-        //{
-        //    ddlCustomers.Items.Clear();
-        //    ddlCustomers.Items.Add(new System.Web.UI.WebControls.ListItem(loanDropDownItem.Select, ""));
-
-        //    List<loanCustomerMasterDAL> lstCustomerMasterDAL = loanCustomerMasterDAL.SelectAllCustomerMasterCustomerName();
-        //    if (lstCustomerMasterDAL == null)
-        //    {
-        //        loanAppGlobals.ShowMessage(loanMessagesDAL.SelectAllFail, loanMessageIcon.Error);
-        //        return;
-        //    }
-        //    foreach (loanCustomerMasterDAL obj in lstCustomerMasterDAL)
-        //    {
-        //        ddlCustomers.Items.Add(new System.Web.UI.WebControls.ListItem(obj.CustomerName, obj.CustomerMasterId.ToString()));
-        //    }
-        //}
-
         protected bool canCollectContracts()
         {
 
             // if Admin  
-            if(loanUser.GetRoleRights(loanRoleRights.DeleteRecord, "Super"))
+            if (loanUser.GetRoleRights(loanRoleRights.DeleteRecord, "Super"))
             {
                 return true;
-            }else
+            }
+            else
             {
                 return false;
             }
         }
 
         protected void btnClearList_Click(object sender, EventArgs e)
-        { 
-            txtSearchCustomerIdNo.Enabled = true; 
-            hdnCustomerMasterId.Value = ""; 
-            txtSearchCustomerIdNo.Text = ""; 
+        {
+            txtSearchCustomerIdNo.Enabled = true;
+            hdnCustomerMasterId.Value = "";
+            txtSearchCustomerIdNo.Text = "";
             txtIdNo.Text = "";
-            txtCustomerName.Text = ""; 
+            txtCustomerName.Text = "";
         }
 
 
@@ -1114,13 +1036,13 @@ namespace abLOAN
                 if (!objCustomerMasterDAL.SelectCustomerMaster())
                 {
                     loanAppGlobals.ShowMessage(loanMessagesDAL.NotFound, loanMessageIcon.Warning);
-                 //   btnClearList_Click(btnClearList, new EventArgs());
+                    //   btnClearList_Click(btnClearList, new EventArgs());
                     return;
                 }
                 hdnCustomerMasterId.Value = objCustomerMasterDAL.CustomerMasterId.ToString();
                 txtIdNo.Text = IdNo;
                 txtCustomerName.Text = objCustomerMasterDAL.CustomerName;
-               // FillContractMaster();
+                // FillContractMaster();
                 //if (sender != null)
                 //{
                 //    GetBankAccountNumber(objCustomerMasterDAL.CustomerMasterId);

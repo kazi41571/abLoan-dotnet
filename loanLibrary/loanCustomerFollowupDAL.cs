@@ -63,13 +63,20 @@ namespace loanLibrary
             {
                 this.CustomerFollowupId = Convert.ToInt32(sqlRdr["CustomerFollowupId"]);
                 this.linktoCompanyMasterId = Convert.ToInt32(sqlRdr["linktoCompanyMasterId"]);
-                this.linktoCustomerMasterId = Convert.ToInt32(sqlRdr["linktoCustomerMasterId"]); 
+                this.linktoCustomerMasterId = Convert.ToInt32(sqlRdr["linktoCustomerMasterId"]);
+     
                 this.Notes = Convert.ToString(sqlRdr["Notes"]); 
                 this.UpdateDateTime = Convert.ToDateTime(sqlRdr["UpdateDateTime"]);
                 this.SessionId = Convert.ToString(sqlRdr["SessionId"]);
 
                 /// Extra
-             
+                this.Customer = Convert.ToString(sqlRdr["Customer"]);
+                this.CustomerIdNo = Convert.ToString(sqlRdr["CustomerIdNo"]);
+                this.CustomerIdNo = Convert.ToString(sqlRdr["CustomerIdNo"]);
+
+
+
+
                 return true;
             }
             return false;

@@ -196,7 +196,9 @@
                         </div>
                     </div>
 
-                    <asp:ListView ID="lvCustomerPaymentMaster" runat="server" DataKeyNames="CustomerPaymentMasterId" OnItemCommand="lvCustomerPaymentMaster_ItemCommand" OnItemDataBound="lvCustomerPaymentMaster_ItemDataBound">
+                    <asp:ListView ID="lvCustomerPaymentMaster" runat="server" DataKeyNames="CustomerPaymentMasterId"
+                        OnItemCommand="lvCustomerPaymentMaster_ItemCommand"
+                        OnItemDataBound="lvCustomerPaymentMaster_ItemDataBound">
                         <LayoutTemplate>
                             <div class="panel panel-default">
                                 <div class="table-responsive">
@@ -293,7 +295,8 @@
                                     <asp:Literal ID="ltrlModifiedDateTime" runat="server"></asp:Literal>
                                 </td>
                                 <td>
-                                    <asp:LinkButton ID="lbtnEdit" runat="server" CommandName="EditRecord" CssClass="btn btn-primary btn-sm fa fa-edit" title="Edit"></asp:LinkButton>
+                                    <asp:LinkButton ID="lbtnEdit" runat="server" CommandName="EditRecord"
+                                        CssClass="btn btn-primary btn-sm fa fa-edit" title="Edit"></asp:LinkButton>
                                 </td>
                                 <td>
                                     <asp:LinkButton ID="lbtnDelete" runat="server" CommandName="DeleteRecord" OnClientClick="javascript:return ConfirmDelete(this);" CssClass="btn btn-danger btn-sm fa fa-trash" title="Delete"></asp:LinkButton>
