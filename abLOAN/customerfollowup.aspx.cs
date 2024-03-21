@@ -189,7 +189,9 @@ namespace abLOAN
                 else if (rsStatus == loanRecordStatus.Success)
                 {
                     loanAppGlobals.ShowMessage(loanMessagesDAL.UpdateSuccess, loanMessageIcon.Success);
-
+                    FillFollowdupCustomerMaster();
+                    FillContractMaster();
+                    lvCustomerFollowedup.DataBind();
 
                 }
 
@@ -242,6 +244,7 @@ namespace abLOAN
                         if (((Button)sender).ID.Equals("btnSaveAndNew"))
                         {
                             hdnModelFollowup.Value = "clear";
+                           
                         }
                         else
                         {
@@ -250,6 +253,7 @@ namespace abLOAN
                         FillFollowdupCustomerMaster();
                         FillContractMaster();
                         lvCustomerFollowedup.DataBind();
+
                     }
                 }
                 else
@@ -257,7 +261,7 @@ namespace abLOAN
                     loanUser.CheckRoleRights(loanRoleRights.EditRecord);
 
                     objCustomerFollowupDAL.UpdateDateTime = loanGlobalsDAL.GetCurrentDateTime();
-                    objCustomerFollowupDAL.CustomerFollowupId = Convert.ToInt32(hdnCustomerMasterId.Value);
+                    objCustomerFollowupDAL.CustomerFollowupId = Convert.ToInt32(hdnCustomerFollowupId.Value);
                     loanRecordStatus rsStatus = objCustomerFollowupDAL.UpdateCustomerfollowup();
                     if (rsStatus == loanRecordStatus.Error)
                     {
@@ -274,10 +278,8 @@ namespace abLOAN
                     {
                         loanAppGlobals.ShowMessage(loanMessagesDAL.UpdateSuccess, loanMessageIcon.Success);
                         hdnModelFollowup.Value = "hide";
-                        FillFollowdupCustomerMaster();
-                        FillContractMaster();
+                        FillFollowdupCustomerMaster(); 
                         lvCustomerFollowedup.DataBind();
-
                     }
                 }
             }
@@ -602,7 +604,8 @@ namespace abLOAN
                     var d = loanGlobalsDAL.ConvertDateTimeToString(objFollowupNoteDAL.CreateDateTime, loanAppGlobals.DateFormat);
                     lblCreateDate.Text = d;
 
-
+                    //Label lblNoteCount = (Label)e.Item.FindControl("lblNoteCount");
+                    //lblNoteCount.Text = objFollowupNoteDAL.totalRowCount.ToString();
 
 
                 }
@@ -687,7 +690,8 @@ namespace abLOAN
                     Label lblCustomer = (Label)e.Item.FindControl("lblCustomer");
                     lblCustomer.Text = objCustomerFollowupDAL.Customer;
 
-
+                    Label lblUsername = (Label)e.Item.FindControl("lblUsername");
+                    lblUsername.Text = objCustomerFollowupDAL.Username.ToString();
 
                     Label lblCustomerIdNo = (Label)e.Item.FindControl("lblCustomerIdNo");
                     lblCustomerIdNo.Text = objCustomerFollowupDAL.CustomerIdNo.ToString();
@@ -764,12 +768,7 @@ namespace abLOAN
 
         private void GetFollowdupCustomer(int FollowupCustomerId)
         {
-            loanUser.CheckRoleRights(loanRoleRights.ViewRecord); 
-            hdnModelFollowup.Value = "show";
-            hdnActionFollowup.Value = "edit";
-
-           
-
+            loanUser.CheckRoleRights(loanRoleRights.ViewRecord);  
             loanCustomerFollowupDAL objCustomerFollowupDAL = new loanCustomerFollowupDAL();
             objCustomerFollowupDAL.CustomerFollowupId = FollowupCustomerId;
             if (!objCustomerFollowupDAL.SelectFollowupCustomer())
@@ -777,14 +776,16 @@ namespace abLOAN
                 loanAppGlobals.ShowMessage(loanMessagesDAL.SelectFail, loanMessageIcon.Error);
                 return;
             }
+            hdnCustomerFollowupId.Value =  FollowupCustomerId.ToString();
             hdnCustomerMasterId.Value = objCustomerFollowupDAL.linktoCustomerMasterId.ToString();
             txtCustomerName.Text = objCustomerFollowupDAL.Customer;
             txtIdNo.Text = objCustomerFollowupDAL.CustomerIdNo;
-            txtSearchCustomerIdNo.Text = objCustomerFollowupDAL.CustomerIdNo; 
+            txtSearchCustomerIdNo.Text = objCustomerFollowupDAL.CustomerIdNo;  
+            ddlAuditors.SelectedValue = objCustomerFollowupDAL.linktoUserMasterId.ToString();
 
+            hdnModelFollowup.Value = "show";
+            hdnActionFollowup.Value = "edit";
 
-            ddlAuditors.SelectedItem.Value = objCustomerFollowupDAL.linktoUserMasterId.ToString();
-            
         }
 
         private void FillFollowdupCustomerMaster()
@@ -792,11 +793,20 @@ namespace abLOAN
             loanCustomerFollowupDAL objCustomerFollowup = new loanCustomerFollowupDAL();
             string OrderBy = null;
             string OrderDir = null;
+
+
             if (ddlSortBy.SelectedValue != string.Empty)
             {
                 OrderBy = ddlSortBy.SelectedValue.Split(',')[0];
                 OrderDir = ddlSortBy.SelectedValue.Split(',')[1];
             }
+
+            if (ddlAuditors.SelectedValue != string.Empty)
+            {
+                objCustomerFollowup.linktoUserMasterId = Convert.ToInt32(ddlAuditors.SelectedValue); 
+            }
+
+
 
             if (!canCollectContracts())
             {

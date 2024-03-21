@@ -23,8 +23,8 @@ namespace loanLibrary
         public DateTime? VerifiedDateTime { get; set; }
         public int? linktoUserMasterId { get; set; }
 
-    
 
+        public int totalRowCount { get; set; }
 
 
         #endregion
@@ -187,6 +187,9 @@ namespace loanLibrary
                 SqlCon.Close();
 
                 totalRecords = (int)SqlCmd.Parameters["@TotalRowCount"].Value;
+                totalRowCount = totalRecords; 
+
+
                 return lstFollowupNoteDAL;
             }
             catch (Exception ex)

@@ -10,6 +10,7 @@
             SetFilter();
         });
         function EndRequest(sender, args) {
+            ShowHideDialogCustomerFollowup();
             SetFilter();
         }
     </script>
@@ -153,10 +154,11 @@
                                     <div class="col-md-8">
                                         <div>
 
-                                            <asp:Label class="primary-card" ID="lblCustomerIdNo" runat="server"></asp:Label>
+                                            <asp:Label class="primary-card" ID="lblUsername" runat="server"></asp:Label>
                                         </div>
                                         <h4>
                                             <b>
+                                                 <asp:Label class="" ID="lblCustomerIdNo" runat="server"></asp:Label> -
                                                 <asp:Label ID="lblCustomer" runat="server"></asp:Label>
                                             </b>
 
@@ -223,20 +225,24 @@
                             </div>
 
                             <div class="card-container"> 
-                                <p> 
-                                    <button class="btn btn-primary" type="button" data-toggle="collapse"
-                                        data-target='<%# "#collapseExample" + Container.DataItemIndex %>' aria-expanded="false"
-                                        aria-controls='<%# "collapseExample" + Container.DataItemIndex %>'>
-                                        Show Note
-                                    </button>
-                                </p>
-                                <div class="collapse" id='<%# "collapseExample" + Container.DataItemIndex %>'>
+                               
                                     <div class="card card-body"> 
+
+                                                                          <p> 
+              <button class="btn btn-primary" type="button" data-toggle="collapse"
+ data-target='<%# "#collapseExample" + Container.DataItemIndex %>' aria-expanded="false"
+ aria-controls='<%# "collapseExample" + Container.DataItemIndex %>'>
+        Show Note  
+     </button>
+</p>           
+
+<div class="collapse" id='<%# "collapseExample" + Container.DataItemIndex %>'>
                                         <asp:ListView ID="lvFollowupNote" runat="server"
                                             DataKeyNames="FollowupNoteId"
                                             DataSource='<%# getFollowUpNoteDataSource(Eval("CustomerFollowupId"))  %>'
                                             OnItemCommand="pgrFollowupNote_ItemCommand"
                                             OnItemDataBound="lvFollowupNote_ItemDataBound">
+                        
 
                                             <LayoutTemplate>
                                                 <div class="panel panel-default">
@@ -297,9 +303,13 @@
                                                     <%= Resources.Resource.NoRecordMessage %>
                                                 </div>
                                             </EmptyDataTemplate>
+
+
                                         </asp:ListView> 
+          </div>
+                                         
                                     </div>
-                                </div>
+                             
                             </div>
 
                             <div class="card-container">
@@ -503,7 +513,7 @@
 
 
 
-    <script type="text/javascript">
+     <script type="text/javascript">
         $(document).ready(function () {
             SetFilterControlsPicker();
             Sys.WebForms.PageRequestManager.getInstance().add_endRequest(SetFilterControlsPicker);
@@ -540,7 +550,7 @@
                 },
             });
         }
-    </script>
+    </script> 
 
 
    
@@ -549,36 +559,41 @@
      <script type="text/javascript">
          $(document).ready(function () {
              if ($("#" + Prefix + "hdnModelFollowup").val() == "") {
-                 ClearCustomerPaymentMaster();
+                 ClearCustomerFollowup();
              }
-             SetDialogShowHideCustomerPaymentMaster();
-             ShowHideDialogCustomerPaymentMaster();
+             SetDialogShowHideCustomerFollowup();
+             ShowHideDialogCustomerFollowup();
          });
 
-         function SetDialogShowHideCustomerPaymentMaster() {
+         function SetDialogShowHideCustomerFollowup() {
+
              $("#divfollowupdetails").on("hidden.bs.modal", function () {
-                 ClearCustomerPaymentMaster();
-                 $("#" + Prefix + "btnClearList").click();
+                 ClearCustomerFollowup();
+             
              })
              $("#divfollowupdetails").on("show.bs.modal", function () {
-                 SetCustomerPaymentMaster();
+                 SetCustomerFollowup();
              })
              $("#divfollowupdetails").on("shown.bs.modal", function () {
-                 $("#" + Prefix + "txtSearchCustomerIdNo").focus();
+                 $("#" + Prefix + "txtCustomerName").focus();
              })
          }
-         function ShowHideDialogCustomerPaymentMaster() {
+         function ShowHideDialogCustomerFollowup() {
              try {
-                 SetCustomerPaymentMaster();
+                 console.log("dialog in")
+                 SetCustomerFollowup();
                  if ($("#" + Prefix + "hdnModelFollowup").val() == "show") {
+                     console.log("Show")
                      $("#divfollowupdetails").modal("show");
                  }
                  else if ($("#" + Prefix + "hdnModelFollowup").val() == "hide") {
-                     ClearCustomerPaymentMaster();
+                     console.log("hide")
+                     ClearCustomerFollowup();
                      $("#divfollowupdetails").modal("hide");
                  }
                  else if ($("#" + Prefix + "hdnModelFollowup").val() == "clear") {
-                     ClearCustomerPaymentMaster();
+                     console.log("Clear")
+                     ClearCustomerFollowup();
                      $("#divfollowupdetails").modal("show");
                      $("#" + Prefix + "txtSearchCustomerIdNo").focus();
                  }
@@ -590,59 +605,39 @@
                  return false;
              }
          }
-         function ClearCustomerPaymentMaster() {
+         function ClearCustomerFollowup() {
              for (i = 0; i < Page_Validators.length; i++) {
                  Page_Validators[i].style.display = "none";
              }
+             $("#" + Prefix + "hdnActionFollowup").val("");
+             $("#" + Prefix + "txtCustomerName").val("");
+             $("#" + Prefix + "txtIdNo").val(""); 
+             $("#" + Prefix + "txtSearchCustomerIdNo").val("");  
+             $("#" + Prefix + "ddlAuditors").prop("selectedIndex", 0);
+             
 
 
 
          }
-         function SetCustomerPaymentMaster() {
+
+
+         function SetCustomerFollowup() {
              for (i = 0; i < Page_Validators.length; i++) {
                  Page_Validators[i].errormessage = Page_Validators[i].innerHTML;
              }
-             if ($("#" + Prefix + "hdnModelFollowup").val() == "") {
+             if ($("#" + Prefix + "hdnActionFollowup").val() == "") {
                  $("#" + Prefix + "btnSaveAndNew").css("visibility", "visible");
                  $("#" + Prefix + "btnSave").val('<%= GetGlobalResourceObject("Resource", "btnSave") %>');
-         }
-         else {
-             $("#" + Prefix + "btnSaveAndNew").css("visibility", "hidden");
-             $("#" + Prefix + "btnSave").val('<%= GetGlobalResourceObject("Resource", "btnUpdate") %>');
-             }
-             Validations();
-         }
-         function Validations() {
-             var SelectedPaymentType = $("#" + Prefix + "ddlPaymentType").val();
-             $("#dvBank").css("display", "none");
-             $("#dvOthers").css("display", "none");
-             $("#dvBankAccountNumber").css("display", "none");
-             if (SelectedPaymentType == 2)    //for Bank
-             {
-                 $("#dvBank").css("display", "block");
-                 $("#dvOthers").css("display", "none");
-                 $("#dvBankAccountNumber").css("display", "block");
-             }
-             else if (SelectedPaymentType > 2)   // for other types
-             {
-                 $("#dvOthers").css("display", "block");
-                 $("#dvBank").css("display", "none");
-                 $("#dvBankAccountNumber").css("display", "block");
-             }
-         }
-         function Calculate() {
-             var txtList = $('.chkAmountAdd');
-             var TotalAdditions = 0;
-             for (var i = 0; i < txtList.length; i++) {
-                 var chk = txtList[i].id.replace("txtLvAmount", "chkSelect");
-                 if ($("#" + chk).prop("checked") == true) {
-                     if (isNaN(parseFloat(txtList[i].value)) == false) {
-                         TotalAdditions += parseFloat(txtList[i].value);
-                     }
-                 }
-             }
-             $(".TotalAdditions").val(TotalAdditions.toFixed(0));
-         }
+          }
+          else {
+              $("#" + Prefix + "btnSaveAndNew").css("visibility", "hidden");
+                   $("#" + Prefix + "btnSave").val('<%= GetGlobalResourceObject("Resource", "btnUpdate") %>');
+               }
+           }
+
+
+ 
+ 
 
          function SearchCustomer() {
              $("#" + Prefix + "txtSearchCustomerIdNo").autocomplete({

@@ -54,6 +54,9 @@ namespace loanLibrary
         public string Mobile1 { get; set; }
         public string Mobile2 { get; set; }
         public string Mobile3 { get; set; }
+
+        public string Username { get; set; }
+         
         #endregion
 
         #region Class Methods
@@ -72,7 +75,7 @@ namespace loanLibrary
                 /// Extra
                 this.Customer = Convert.ToString(sqlRdr["Customer"]);
                 this.CustomerIdNo = Convert.ToString(sqlRdr["CustomerIdNo"]);
-                this.CustomerIdNo = Convert.ToString(sqlRdr["CustomerIdNo"]);
+                this.Username = Convert.ToString(sqlRdr["Username"]);
 
 
 
@@ -128,6 +131,13 @@ namespace loanLibrary
                 if (sqlRdr["Mobile3"] != DBNull.Value)
                 {
                     objCustomerFollowup.Mobile3 = Convert.ToString(sqlRdr["Mobile3"]);
+                }
+
+                if (sqlRdr["Username"] != DBNull.Value)
+                {
+                   
+                    objCustomerFollowup.Username = Convert.ToString(sqlRdr["Username"]);
+
                 }
 
                 lstCustomerFollowup.Add(objCustomerFollowup);
