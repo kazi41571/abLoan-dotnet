@@ -63,7 +63,8 @@
                                                 <div class="form-group">
                                                     <label class="col-sm-5 control-label"><%= Resources.Resource.Username %></label>
                                                     <div class="col-sm-7">
-                                                        <asp:TextBox ID="txtFilterUsername" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                                        <%--<asp:TextBox ID="txtFilterUsername" runat="server" CssClass="form-control input-sm"></asp:TextBox>--%>
+                                                         <asp:DropDownList ID="ddlFilterUsername" runat="server" CssClass="form-control input-sm"></asp:DropDownList>
                                                     </div>
                                                 </div>
                                             </div>
@@ -154,7 +155,8 @@
                                     <div class="col-md-8">
                                         <div>
 
-                                            <asp:Label class="primary-card" ID="lblUsername" runat="server"></asp:Label>
+                                            <asp:Label class="primary-card" ID="lblUsername" runat="server"></asp:Label> 
+                                            
                                         </div>
                                         <h4>
                                             <b>
@@ -163,6 +165,22 @@
                                             </b>
 
                                         </h4>
+                                        <h5>
+                                            (  <asp:Label   ID="lblContractsCount" runat="server"></asp:Label>  ) عدد العقود
+
+                                        </h5>
+
+                                           <h5>
+                                                 (  <asp:Label   ID="lblTotalAmount" runat="server"></asp:Label>  )  قيمة العقود
+
+                                         </h5>
+
+                                        
+                                           <h5>
+                                                 (  <asp:Label   ID="lblTotalRemains" runat="server"></asp:Label>  )  قيمة الأقساط المتبقية
+
+                                         </h5>
+                                        
                                         <h5>
 
                                             <asp:Label ID="lblMobile1" runat="server"></asp:Label>

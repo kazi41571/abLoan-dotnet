@@ -183,6 +183,9 @@
   <data name="InvalidUsername" xml:space="preserve">
     <value>اسم المستخدم غير صالح. حاول مرة أخري</value>
   </data>
+  <data name="NoteMissing" xml:space="preserve">
+    <value>يجب إضافة ملاحظة</value>
+  </data>
   <data name="NotFound" xml:space="preserve">
     <value>لاتوجد بيانات</value>
   </data>

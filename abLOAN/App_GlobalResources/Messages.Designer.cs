@@ -250,6 +250,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You  Should Add Note.
+        /// </summary>
+        internal static string NoteMissing {
+            get {
+                return ResourceManager.GetString("NoteMissing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No record found..
         /// </summary>
         internal static string NotFound {

@@ -14,7 +14,7 @@ namespace abLOAN
         {
             try
             {
-                //loanSessionDAL.CheckSession();
+              //  loanSessionDAL.CheckSession();
 
                 if (!Page.IsPostBack)
                 {

@@ -13,6 +13,8 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web.UI.HtmlControls;
 using System.Net.NetworkInformation;
 using System.Web;
+using System.Web.Services.Description;
+using System.Windows.Input;
 
 namespace abLOAN
 {
@@ -167,6 +169,13 @@ namespace abLOAN
             HiddenField lblCustomerFollowupId = (HiddenField)container.FindControl("lblCustomerFollowupId");
             // Access the value of the TextBox
             string notes = txtInput.Text;
+
+            if (String.IsNullOrEmpty(notes))
+            { 
+                loanAppGlobals.ShowMessage( "NoteMissing" , loanMessageIcon.Warning);
+                return;
+            }
+
             int id = int.Parse(lblCustomerFollowupId.Value);
 
 
@@ -705,8 +714,27 @@ namespace abLOAN
                     Label lblMobile3 = (Label)e.Item.FindControl("lblMobile3");
                     lblMobile3.Text = objCustomerFollowupDAL.Mobile3 ?? objCustomerFollowupDAL.Mobile2;
 
+                 
+
                     HiddenField lblCustomerFollowupId = (HiddenField)e.Item.FindControl("lblCustomerFollowupId");
                     lblCustomerFollowupId.Value = objCustomerFollowupDAL.CustomerFollowupId.ToString();
+
+
+
+
+                    Label lblContractsCount  = (Label)e.Item.FindControl("lblContractsCount");
+                    lblContractsCount.Text = objCustomerFollowupDAL.ContractsCount.ToString();
+
+
+
+                    Label lblTotalAmount = (Label)e.Item.FindControl("lblTotalAmount");
+                    lblTotalAmount.Text = objCustomerFollowupDAL.TotalAmount.ToString();
+
+
+
+                    Label lblTotalRemains = (Label)e.Item.FindControl("lblTotalRemains");
+                    lblTotalRemains.Text = objCustomerFollowupDAL.TotalRemains.ToString();
+
 
 
 
@@ -805,6 +833,13 @@ namespace abLOAN
             {
                 objCustomerFollowup.linktoUserMasterId = Convert.ToInt32(ddlAuditors.SelectedValue); 
             }
+
+
+            if (ddlFilterUsername.SelectedValue != string.Empty)
+            {
+                objCustomerFollowup.linktoUserMasterId = Convert.ToInt32(ddlFilterUsername.SelectedValue);
+            }
+
 
 
 
@@ -996,6 +1031,9 @@ namespace abLOAN
             ddlAuditors.Items.Clear();
             ddlAuditors.Items.Add(new System.Web.UI.WebControls.ListItem(loanDropDownItem.Select, ""));
 
+            ddlFilterUsername.Items.Clear();
+            ddlFilterUsername.Items.Add(new System.Web.UI.WebControls.ListItem(loanDropDownItem.Select, ""));
+
             List<loanUserMasterDAL> lstUserMasterDAL = loanUserMasterDAL.SelectAllUserMaster();
             if (lstUserMasterDAL == null)
             {
@@ -1005,6 +1043,7 @@ namespace abLOAN
             foreach (loanUserMasterDAL obj in lstUserMasterDAL)
             {
                 ddlAuditors.Items.Add(new System.Web.UI.WebControls.ListItem(obj.Username, obj.UserMasterId.ToString()));
+                ddlFilterUsername.Items.Add(new System.Web.UI.WebControls.ListItem(obj.Username, obj.UserMasterId.ToString()));
             }
         }
 

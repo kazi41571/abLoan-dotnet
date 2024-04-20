@@ -56,7 +56,13 @@ namespace loanLibrary
         public string Mobile3 { get; set; }
 
         public string Username { get; set; }
-         
+
+        public int ContractsCount { get; set; }
+        public int TotalInstallments { get; set; }
+        public int RemainingInstallments { get; set; }
+        public decimal TotalAmount { get; set; } 
+        public decimal TotalRemains { get; set; }
+
         #endregion
 
         #region Class Methods
@@ -139,6 +145,54 @@ namespace loanLibrary
                     objCustomerFollowup.Username = Convert.ToString(sqlRdr["Username"]);
 
                 }
+
+
+
+                if (sqlRdr["ContractsCount"] != DBNull.Value)
+                {
+
+                    objCustomerFollowup.ContractsCount = Convert.ToInt32(sqlRdr["ContractsCount"]);
+
+                }
+
+                if (sqlRdr["TotalInstallments"] != DBNull.Value)
+                {
+
+                    objCustomerFollowup.TotalInstallments = Convert.ToInt32(sqlRdr["TotalInstallments"]);
+
+                }
+
+
+                if (sqlRdr["RemainingInstallments"] != DBNull.Value)
+                {
+
+                    objCustomerFollowup.RemainingInstallments = Convert.ToInt32(sqlRdr["RemainingInstallments"]);
+
+                }
+
+                if (sqlRdr["TotalAmount"] != DBNull.Value)
+                {
+
+                    objCustomerFollowup.TotalAmount = Convert.ToDecimal(sqlRdr["TotalAmount"]);
+
+                }
+
+                if (sqlRdr["TotalPaid"] != DBNull.Value)
+                {
+
+                    objCustomerFollowup.TotalPaid = Convert.ToDecimal(sqlRdr["TotalPaid"]);
+
+                }
+
+                if (sqlRdr["TotalRemains"] != DBNull.Value)
+                {
+
+                    objCustomerFollowup.TotalRemains = Convert.ToDecimal(sqlRdr["TotalRemains"]);
+
+                }
+
+
+
 
                 lstCustomerFollowup.Add(objCustomerFollowup);
             }

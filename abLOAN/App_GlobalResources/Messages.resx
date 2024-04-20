@@ -180,6 +180,9 @@
   <data name="InvalidUsername" xml:space="preserve">
     <value>Invalid Username. Try again!</value>
   </data>
+  <data name="NoteMissing" xml:space="preserve">
+    <value>You  Should Add Note</value>
+  </data>
   <data name="NotFound" xml:space="preserve">
     <value>No record found.</value>
   </data>
