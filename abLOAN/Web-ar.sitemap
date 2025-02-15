@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="" description="">
+    <siteMapNode url="default.aspx" title="الصفحة الرئيسية" description="" icon="fa fa-dashboard" />
+    <siteMapNode url="#" title="الجداول الرئيسية" description="" icon="fa fa-cog">
+      <siteMapNode url="company.aspx" title="الشركة" description="" />
+      <siteMapNode url="role.aspx" title="الأدوار" description="" />
+      <siteMapNode url="user.aspx" title="المستخدمين" description="" />
+      <siteMapNode url="bank.aspx" title="البنوك" description="" />
+      <siteMapNode url="paymenttype.aspx" title="أنواع الدفع" description="" />
+      <siteMapNode url="chequestatus.aspx" title="حالة الشيك" description="" />
+      <siteMapNode url="customer.aspx" title="العميل" description="" />
+      <siteMapNode url="guarantor.aspx" title="الكفيل" description="" />
+      <siteMapNode url="witness.aspx" title="الشاهد" description="" />
+      <siteMapNode url="item.aspx" title="السلعة" description="" />
+      <siteMapNode url="brand.aspx" title="الأنواع" description="" />
+      <siteMapNode url="color.aspx" title="الألوان" description="" />
+    </siteMapNode>
+    <siteMapNode url="#" title="المعاملات" description="" icon="fa fa-money">
+      <siteMapNode url="purchase.aspx" title="المشتريات" description="" />
+      <siteMapNode url="sales.aspx" title="المبيعات" description="" />
+      <siteMapNode url="contract.aspx" title="العقود" description="" />
+      <siteMapNode url="customerpayment.aspx" title="المدفوعات" description="" />
+      <siteMapNode url="contractinstallment.aspx" title="الأقساط" description="" />
+      <siteMapNode url="chequemultiple.aspx" title="إضافة الشيكات" description="" />
+      <!--<siteMapNode url="cheque.aspx" title="تعديلات الشيكات" description="" />-->
+      <siteMapNode url="zakaahpayment.aspx" title="الزكاة" description="" />
+      <!--<siteMapNode url="calling.aspx" title="سجلات المكالمات" description="" />      
+      <siteMapNode url="sales.aspx" title="المبيعات" description="" />-->
+		<siteMapNode url="customerfollowup.aspx" title="متابعة العقود" description="" />
+
+    </siteMapNode>
+    <siteMapNode url="#" title="تقارير" description="" icon="fa fa-line-chart">
+      <siteMapNode url="itemstockreport.aspx" title="مخزون" description="" />
+      <siteMapNode url="contractreport.aspx" title="التقرير العام" description="" />
+      <siteMapNode url="customerreport.aspx" title="تقرير العميل" description="" />
+      <siteMapNode url="customerguarantorreport.aspx" title="تقرير معلومات العملاء و كفيل" description="" />
+      <siteMapNode url="contractduereport.aspx" title="تقرير المتأخرين" description="" />
+      <siteMapNode url="contractamountreport.aspx" title="تقرير المجموع" description="" />
+      <siteMapNode url="contractinstallmentreport.aspx" title="تقرير لأقساط للعميل" description="" />
+      <siteMapNode url="contractlistreport.aspx" title="تقرير العقود" description="" />
+      <siteMapNode url="paymentreceivedreport.aspx" title="تقرير السداد الشهري" description="" />
+      <!--<siteMapNode url="purchasesalestransactions.aspx" title="تقرير المشتريات و المبيعات" description="" />-->
+      <siteMapNode url="purchasereport.aspx" title="تقرير المشتريات" description="" />
+      <siteMapNode url="salesreport.aspx" title="تقرير المبيعات" description="" />
+      <siteMapNode url="trace.aspx" title="تتبع البيانات" description="" />
+      <siteMapNode url="userlog.aspx" title="سجلات المستخدم" description="" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

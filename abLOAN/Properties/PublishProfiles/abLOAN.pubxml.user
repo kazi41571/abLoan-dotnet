@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\PROJECTS\Publish\abLOAN</_PublishTargetUrl>
+    <History>True|2025-01-12T08:46:05.3576387Z||;True|2024-06-04T00:32:50.3112352+03:00||;True|2024-06-01T21:03:33.7552146+03:00||;True|2024-05-11T18:20:42.2429449+03:00||;True|2024-03-21T04:59:48.9877651+03:00||;True|2023-10-04T12:47:12.8289173+03:00||;True|2023-09-26T14:42:47.2477530+03:00||;True|2023-09-17T12:04:10.0167716+03:00||;True|2023-09-17T11:54:49.8171104+03:00||;True|2023-07-27T09:31:58.8981106+03:00||;True|2023-07-14T11:19:33.9269202+03:00||;True|2023-07-13T14:19:43.3883962+03:00||;True|2023-06-19T09:30:26.2152234+03:00||;True|2023-06-19T08:50:42.8422683+03:00||;True|2023-06-12T13:40:56.8433165+03:00||;True|2023-06-06T11:20:17.1496015+03:00||;True|2023-06-06T09:46:06.0637015+03:00||;True|2023-05-19T13:20:49.5991601+03:00||;True|2023-04-03T14:04:28.3275030+03:00||;True|2023-02-14T15:11:13.6291671+03:00||;True|2023-02-14T15:09:34.3073019+03:00||;True|2023-02-02T11:24:37.2830008+03:00||;True|2023-02-01T15:24:28.7031587+03:00||;True|2023-02-01T15:22:46.2768150+03:00||;True|2023-02-01T14:54:43.6678744+03:00||;True|2023-02-01T14:46:52.1513862+03:00||;True|2023-01-31T10:02:50.7945239+03:00||;True|2023-01-31T10:01:45.9965959+03:00||;True|2023-01-30T14:47:57.9037905+03:00||;True|2023-01-30T10:28:07.9370019+03:00||;True|2023-01-30T10:25:39.8763564+03:00||;True|2023-01-29T11:31:42.5469204+03:00||;True|2023-01-29T10:37:34.4651633+03:00||;True|2023-01-11T13:08:29.4880103+03:00||;True|2023-01-11T11:37:13.0281850+03:00||;True|2023-01-10T12:10:54.9590536+03:00||;True|2022-12-07T11:57:03.3583436+03:00||;True|2022-12-07T11:56:50.2882670+03:00||;True|2022-12-07T11:43:15.8657229+03:00||;True|2022-12-05T06:39:19.3790514+03:00||;True|2022-10-06T07:44:21.2228712+03:00||;True|2022-10-06T07:43:39.7732466+03:00||;True|2022-10-06T07:30:27.3134392+03:00||;True|2022-04-15T13:54:13.9230824+03:00||;True|2022-04-12T14:09:34.4233192+03:00||;True|2022-04-12T14:06:12.0536675+03:00||;True|2022-04-12T13:36:45.1342547+03:00||;True|2022-04-10T17:54:15.3448757+03:00||;True|2022-04-10T17:53:26.0280456+03:00||;True|2022-04-10T17:47:22.4855961+03:00||;True|2022-04-06T09:06:37.4713711+03:00||;True|2022-04-06T09:03:38.0697436+03:00||;True|2022-04-04T16:04:09.5803101+03:00||;True|2022-04-03T16:20:35.9822563+03:00||;True|2022-04-01T16:26:51.7125532+03:00||;True|2022-04-01T16:26:40.4161444+03:00||;True|2022-03-26T20:54:56.2473644+03:00||;True|2022-03-24T15:35:05.7496973+03:00||;True|2022-03-08T10:18:59.1855733+03:00||;True|2022-03-08T10:08:41.8439726+03:00||;True|2022-03-07T10:06:22.3130755+03:00||;True|2022-03-06T12:08:54.1703813+03:00||;True|2022-03-06T12:08:26.1030695+03:00||;True|2022-03-03T11:37:00.4407519+03:00||;True|2022-03-03T08:44:37.8580726+03:00||;True|2022-03-02T09:58:00.1216475+03:00||;True|2022-03-01T14:38:38.5445990+03:00||;True|2022-03-01T12:08:26.5928932+03:00||;True|2022-02-28T11:41:53.1442183+03:00||;True|2022-02-28T09:46:39.3274578+03:00||;True|2022-02-28T09:40:09.2678946+03:00||;True|2022-02-27T13:16:39.2509208+03:00||;True|2022-02-25T10:52:48.4886321+03:00||;True|2022-02-23T09:10:54.0238759+03:00||;True|2022-02-20T16:19:31.6866319+03:00||;True|2022-02-16T14:26:37.6787961+03:00||;True|2022-02-16T12:33:43.5433217+03:00||;True|2022-02-16T12:33:18.7363069+03:00||;True|2022-02-16T12:32:46.6040810+03:00||;True|2022-02-16T12:32:18.0733986+03:00||;True|2022-02-16T12:31:33.0603985+03:00||;True|2022-02-16T12:28:51.4216376+03:00||;True|2022-02-16T12:28:00.4506706+03:00||;True|2022-02-16T12:25:21.0048384+03:00||;True|2022-02-15T18:51:10.4035259+03:00||;True|2022-02-13T18:05:14.7035356+03:00||;True|2022-02-13T16:19:03.9902762+03:00||;True|2022-02-13T15:50:58.3174571+03:00||;True|2022-02-12T16:35:20.8260547+03:00||;True|2022-02-12T16:26:23.1020890+03:00||;True|2021-12-13T12:37:33.0561925+03:00||;True|2021-12-13T11:46:14.2772318+03:00||;True|2021-12-05T07:56:08.4554859+03:00||;True|2021-12-05T07:53:19.3658412+03:00||;True|2021-12-05T07:51:39.3475741+03:00||;True|2021-12-05T07:48:44.2910360+03:00||;True|2021-11-27T09:13:43.1713961+03:00||;True|2021-11-15T13:17:30.0112800+03:00||;True|2021-11-06T07:27:03.5351247+03:00||;True|2021-10-23T12:49:19.8991601+03:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_GlobalResources/Messages.ar.resx">
+      <publishTime>04/20/2024 21:10:26</publishTime>
+    </File>
+    <File Include="App_GlobalResources/Messages.resx">
+      <publishTime>04/20/2024 21:10:08</publishTime>
+    </File>
+    <File Include="App_GlobalResources/Resource.ar.resx">
+      <publishTime>02/18/2024 21:52:52</publishTime>
+    </File>
+    <File Include="App_GlobalResources/Resource.resx">
+      <publishTime>02/18/2024 21:52:52</publishTime>
+    </File>
+    <File Include="bank.aspx">
+      <publishTime>01/10/2025 20:10:55</publishTime>
+    </File>
+    <File Include="bin/abHelper.dll">
+      <publishTime>07/29/2017 16:29:21</publishTime>
+    </File>
+    <File Include="bin/abLOAN.dll">
+      <publishTime>01/12/2025 17:07:17</publishTime>
+    </File>
+    <File Include="bin/abLOAN.pdb">
+      <publishTime>01/12/2025 17:07:17</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>01/16/2020 17:33:44</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>01/16/2020 17:33:44</publishTime>
+    </File>
+    <File Include="bin/App_GlobalResources.compiled">
+      <publishTime>01/16/2020 17:33:43</publishTime>
+    </File>
+    <File Include="bin/App_GlobalResources.dll">
+      <publishTime>01/16/2020 17:33:43</publishTime>
+    </File>
+    <File Include="bin/ar/App_GlobalResources.resources.dll">
+      <publishTime>01/16/2020 17:33:43</publishTime>
+    </File>
+    <File Include="bin/CustomDataPager.dll">
+      <publishTime>03/01/2022 13:50:26</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>05/25/2010 12:55:22</publishTime>
+    </File>
+    <File Include="bin/loanLibrary.dll">
+      <publishTime>01/12/2025 11:46:04</publishTime>
+    </File>
+    <File Include="bin/loanLibrary.pdb">
+      <publishTime>01/12/2025 11:46:04</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/17/2021 23:03:36</publishTime>
+    </File>
+    <File Include="bin/QRCoder.dll">
+      <publishTime>12/12/2021 15:30:50</publishTime>
+    </File>
+    <File Include="bin/SendGrid.dll">
+      <publishTime>04/02/2024 11:24:24</publishTime>
+    </File>
+    <File Include="bin/SendGrid.pdb">
+      <publishTime>04/02/2024 11:24:24</publishTime>
+    </File>
+    <File Include="bin/StarkbankEcdsa.dll">
+      <publishTime>11/10/2021 00:27:58</publishTime>
+    </File>
+    <File Include="brand.aspx">
+      <publishTime>06/21/2020 19:08:32</publishTime>
+    </File>
+    <File Include="calling.aspx">
+      <publishTime>07/21/2019 12:28:34</publishTime>
+    </File>
+    <File Include="category.aspx">
+      <publishTime>06/30/2020 13:05:34</publishTime>
+    </File>
+    <File Include="changepassword.aspx">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="cheque.aspx">
+      <publishTime>07/29/2019 16:13:28</publishTime>
+    </File>
+    <File Include="chequemultiple.aspx">
+      <publishTime>06/19/2023 08:45:39</publishTime>
+    </File>
+    <File Include="chequestatus.aspx">
+      <publishTime>07/23/2019 15:01:24</publishTime>
+    </File>
+    <File Include="color.aspx">
+      <publishTime>06/21/2020 21:01:34</publishTime>
+    </File>
+    <File Include="company.aspx">
+      <publishTime>01/10/2025 20:01:01</publishTime>
+    </File>
+    <File Include="contract.aspx">
+      <publishTime>07/26/2023 14:30:54</publishTime>
+    </File>
+    <File Include="contractamountreport.aspx">
+      <publishTime>03/20/2021 10:44:06</publishTime>
+    </File>
+    <File Include="contractdetails.aspx">
+      <publishTime>06/06/2023 09:16:45</publishTime>
+    </File>
+    <File Include="contractduereport.aspx">
+      <publishTime>04/03/2023 14:04:07</publishTime>
+    </File>
+    <File Include="contractinstallment.aspx">
+      <publishTime>01/10/2025 20:42:30</publishTime>
+    </File>
+    <File Include="contractinstallmentreport.aspx">
+      <publishTime>07/21/2019 12:28:32</publishTime>
+    </File>
+    <File Include="contractlistreport.aspx">
+      <publishTime>03/27/2021 09:22:46</publishTime>
+    </File>
+    <File Include="contractreport.aspx">
+      <publishTime>09/24/2019 08:44:32</publishTime>
+    </File>
+    <File Include="css/AdminLTE.css">
+      <publishTime>07/21/2019 12:28:34</publishTime>
+    </File>
+    <File Include="css/AdminLTE.min.css">
+      <publishTime>07/21/2019 12:28:34</publishTime>
+    </File>
+    <File Include="css/bootstrap.css">
+      <publishTime>07/21/2019 12:28:34</publishTime>
+    </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>07/21/2019 12:28:34</publishTime>
+    </File>
+    <File Include="css/print.css">
+      <publishTime>07/21/2019 12:28:34</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>03/21/2024 02:14:24</publishTime>
+    </File>
+    <File Include="customer.aspx">
+      <publishTime>06/19/2023 08:29:44</publishTime>
+    </File>
+    <File Include="customerfollowup.aspx">
+      <publishTime>06/01/2024 20:29:20</publishTime>
+    </File>
+    <File Include="customerguarantorreport.aspx">
+      <publishTime>07/21/2019 12:28:32</publishTime>
+    </File>
+    <File Include="customerpayment.aspx">
+      <publishTime>03/21/2024 02:14:24</publishTime>
+    </File>
+    <File Include="customerreport.aspx">
+      <publishTime>09/05/2020 08:13:22</publishTime>
+    </File>
+    <File Include="default.aspx">
+      <publishTime>01/17/2020 15:52:50</publishTime>
+    </File>
+    <File Include="errorlog.aspx">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="files/ReceiptTemplate/receipt.html">
+      <publishTime>02/14/2023 15:11:02</publishTime>
+    </File>
+    <File Include="files/ReceiptTemplate/receiptrow.html">
+      <publishTime>02/11/2022 16:12:11</publishTime>
+    </File>
+    <File Include="files/ReceiptTemplate/styles.css">
+      <publishTime>02/09/2022 16:54:54</publishTime>
+    </File>
+    <File Include="fonts/Vazir-Bold.eot">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="fonts/Vazir-Bold.ttf">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="fonts/Vazir-Bold.woff">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="fonts/Vazir.eot">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="fonts/Vazir.ttf">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="fonts/Vazir.woff">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="guarantor.aspx">
+      <publishTime>01/10/2025 19:58:06</publishTime>
+    </File>
+    <File Include="img/arraybit-logo.png">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="img/loader.gif">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="img/logo.png">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="img/xs_NoImage.png">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="item.aspx">
+      <publishTime>01/10/2025 20:14:21</publishTime>
+    </File>
+    <File Include="itemstockreport.aspx">
+      <publishTime>05/05/2021 14:56:15</publishTime>
+    </File>
+    <File Include="js/bootstrap.js">
+      <publishTime>07/21/2019 12:28:34</publishTime>
+    </File>
+    <File Include="js/bootstrap.min.js">
+      <publishTime>07/21/2019 12:28:34</publishTime>
+    </File>
+    <File Include="js/npm.js">
+      <publishTime>07/21/2019 12:28:34</publishTime>
+    </File>
+    <File Include="js/scripts.js">
+      <publishTime>07/31/2019 12:24:06</publishTime>
+    </File>
+    <File Include="login.aspx">
+      <publishTime>06/03/2024 23:49:56</publishTime>
+    </File>
+    <File Include="paymentreceivedreport.aspx">
+      <publishTime>05/06/2021 17:39:30</publishTime>
+    </File>
+    <File Include="paymenttype.aspx">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>01/16/2020 17:33:40</publishTime>
+    </File>
+    <File Include="purchase.aspx">
+      <publishTime>03/24/2022 12:27:24</publishTime>
+    </File>
+    <File Include="purchasereport.aspx">
+      <publishTime>01/10/2020 09:06:28</publishTime>
+    </File>
+    <File Include="purchasesalestransactions.aspx">
+      <publishTime>03/28/2021 11:13:44</publishTime>
+    </File>
+    <File Include="role.aspx">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="rolerights.aspx">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="sales.aspx">
+      <publishTime>03/24/2022 13:13:14</publishTime>
+    </File>
+    <File Include="salesreport.aspx">
+      <publishTime>12/13/2021 10:58:23</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>01/10/2020 09:06:28</publishTime>
+    </File>
+    <File Include="trace.aspx">
+      <publishTime>01/31/2020 12:48:54</publishTime>
+    </File>
+    <File Include="user.aspx">
+      <publishTime>01/10/2025 20:09:05</publishTime>
+    </File>
+    <File Include="userlog.aspx">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="Web-ar.sitemap">
+      <publishTime>03/21/2024 02:14:24</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/12/2025 17:07:17</publishTime>
+    </File>
+    <File Include="Web.sitemap">
+      <publishTime>03/21/2024 04:01:03</publishTime>
+    </File>
+    <File Include="witness.aspx">
+      <publishTime>07/21/2019 12:28:36</publishTime>
+    </File>
+    <File Include="zakaahpayment.aspx">
+      <publishTime>05/11/2020 12:44:46</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
