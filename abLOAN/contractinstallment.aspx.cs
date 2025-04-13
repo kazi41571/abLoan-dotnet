@@ -48,7 +48,7 @@ namespace abLOAN
             {
                 objContractInstallmentTranDAL.linktoBankMasterId = Convert.ToInt32(ddlFilterBank.SelectedValue);
             }
-          
+            
 
             objContractInstallmentTranDAL.linktoCompanyMasterId = ((loanUser)Session[loanSessionsDAL.UserSession]).CompanyMasterId;
 
@@ -57,8 +57,21 @@ namespace abLOAN
                 objContractInstallmentTranDAL.linktoContractStatusMasterId = Convert.ToInt32(ddlFilterContractStatus.SelectedValue);
             }
 
+            DateTime? InstallmentDateFrom = null;
+            if (!string.IsNullOrEmpty(txtFilterInstallmentDateFrom.Text))
+            {
+                InstallmentDateFrom = DateTime.ParseExact(txtFilterInstallmentDateFrom.Text, loanAppGlobals.DateFormat, System.Globalization.DateTimeFormatInfo.InvariantInfo);
+             //   objContractInstallmentTranDAL.InstallmentDate = DateTime.ParseExact(txtFilterInstallmentDateFrom.Text, loanAppGlobals.DateFormat, System.Globalization.DateTimeFormatInfo.InvariantInfo);
+            }
+            DateTime? InstallmentDateTo = null;
+            if (!string.IsNullOrEmpty(txtFilterInstallmentDateTo.Text))
+            {
+                InstallmentDateTo = DateTime.ParseExact(txtFilterInstallmentDateTo.Text, loanAppGlobals.DateFormat, System.Globalization.DateTimeFormatInfo.InvariantInfo);
+              //  objContractInstallmentTranDAL.InstallmentDate = DateTime.ParseExact(txtFilterInstallmentDateTo.Text, loanAppGlobals.DateFormat, System.Globalization.DateTimeFormatInfo.InvariantInfo);
+            }
+
             int TotalRecords;
-            List<loanContractInstallmentTranDAL> lstContractInstallmentTran = objContractInstallmentTranDAL.SelectAllContractInstallmentTranPageWise(0, int.MaxValue, out TotalRecords);
+            List<loanContractInstallmentTranDAL> lstContractInstallmentTran = objContractInstallmentTranDAL.SelectAllContractInstallmentTranPageWise(0, int.MaxValue, out TotalRecords, InstallmentDateFrom, InstallmentDateTo);
 
             if (lstContractInstallmentTran == null)
             {

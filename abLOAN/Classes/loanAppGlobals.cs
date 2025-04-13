@@ -155,7 +155,12 @@ namespace abLOAN
                             }
                             else
                             {
-                                line += "\"" + pro.GetValue(obj, null)?.ToString().Replace(Environment.NewLine, " ") + "\";";
+                                //line += "\"" + pro.GetValue(obj, null)?.ToString().Replace(Environment.NewLine, " ") + "\";";
+                                line += "\"" + pro.GetValue(obj, null)?
+                                                    .ToString()
+                                                    .Replace("\r\n", " ")
+                                                    .Replace("\n", " ")
+                                                    .Replace("\r", " ") + "\";";
                             }
                         }
                     }
